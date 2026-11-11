@@ -1,0 +1,27 @@
+# Vivado generated files
+*.cache/
+*.gen/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+.Xil/
+*.jou
+*.log
+*.str
+*.backup.*
+vivado_pid*.zip
+dfx_runtime.txt
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# datasets and trained models (regenerate with model/train.py and model/quantize.py)
+data/
+model/data/
+*.npz
+
+# board copies of build outputs
+pynq/
