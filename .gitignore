@@ -21,6 +21,10 @@ vivado_pid*.zip
 xsim.dir/
 dfx_runtime.txt
 
+# Vivado per-user diagram/session state and automatic incremental checkpoints.
+*.srcs/**/ui/
+*.srcs/utils_1/imports/
+
 # Python
 __pycache__/
 *.py[cod]

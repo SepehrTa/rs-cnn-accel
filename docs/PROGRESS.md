@@ -1,5 +1,16 @@
 # Live implementation status
 
+## Final main publication (2026-11-12)
+
+- README now documents ordinary default-branch clone/open instructions,
+  prerequisites, IP preparation, GUI builds and portable board/model workflows.
+- Added `scripts/prepare_vivado.tcl` to open/refresh/validate/generate the full
+  project and enable post-route physical optimization; no Python/board required.
+- A real fresh Git clone built its complete bitstream with 100 MHz timing met:
+  setup +0.006 ns, hold +0.020 ns. See CLONE_VALIDATION.md and reports/final-clone.
+- Previous main retained at `archive/pre-final-2026-11-12`; history preserved.
+- Original local Vivado session metadata was not used or overwritten for publication.
+
 ## Vivado GUI project delivered (2026-11-12)
 
 - Replaced the old empty root `rs-cnn-accel.xpr` with the complete 2025.2
