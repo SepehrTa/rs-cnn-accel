@@ -1,0 +1,3 @@
+# Preserve tool-generated report formatting verbatim, including trailing spaces.
+# Continue normal whitespace checks for all handwritten source and documentation.
+docs/reports/** -whitespace

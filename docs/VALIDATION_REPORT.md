@@ -186,7 +186,7 @@ operation or full PS/DMA bus functional simulation has been performed here.
 | `tests/test_nn_numpy.py`, `test_rs.py`, `test_protocol.py` | Meaningful failure exits and independent host/scalar/DMA-mock checks |
 | `scripts/run_rtl.py`, `synth.tcl`, `build_board.tcl` | Reproducible XSim/OOC/PS7-DMA builds |
 | `scripts/fetch_ps_preset.py`, `probe_vivado.tcl`, `capture_evidence.py` | Pinned local preset, tool probe, reproducible evidence |
-| `requirements-test.txt`, `.gitignore`, `README.md` | Verification environment, generated-artifact exclusions and usage |
+| `requirements-test.txt`, `.gitignore`, `.gitattributes`, `README.md` | Verification environment, generated-artifact exclusions, verbatim report formatting and usage |
 | `docs/plan.md`, `IMPLEMENTATION_PLAN.md`, `PROGRESS.md`, `ARCHITECTURE.md`, `BOARD_VALIDATION.md`, `VALIDATION_REPORT.md`, `reports/*` | Audit, decisions, actual results, protocol and remaining deployment work |
 
 Preserved the user's untracked `AGENTS.md` and root XPR. No packages installed,
