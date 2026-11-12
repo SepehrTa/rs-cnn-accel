@@ -78,6 +78,41 @@ signal-integrity margins were not measured. This is a restricted row-stationary
 schedule; analytical Eyeriss mapper throughput is not measured board throughput.
 See [actual board results](docs/BOARD_RESULTS.md) for commands, logs and limits.
 
+## Eyeriss-inspired improvements and real-board evidence
+
+The row-stationary design follows [Chen, Emer and Sze, Eyeriss (ISCA 2016),
+Section V](https://eems.mit.edu/wp-content/uploads/2016/04/eyeriss_isca_2016.pdf).
+The practical contribution here is a working PYNQ-Z2 INT8/ResNet-8 adaptation
+with the following implemented reuse mechanisms:
+
+| Eyeriss-inspired mechanism | Implemented improvement |
+|---|---|
+| Stationary weight rows | Weights stay in PE-local storage while multiple output positions are computed. |
+| Activation-row reuse | Sliding-window reuse and diagonal multicast share input rows across output rows; both filter groups receive the shared input. |
+| Local and neighbor partial sums | Channel accumulations remain on-chip, and registered row-neighbor links reduce partial sums before output. No channel partial sums spill to DDR. |
+| Bounded storage hierarchy | Local row/psum memories and a banked ingress FIFO fit the 48-PE design into the PYNQ-Z2; the full PS7/DMA design uses four BRAM36-equivalent tiles. |
+
+**Quantified reuse improvement — RTL simulation, not board power/DDR counters:**
+the retained convolution trace executes 12,500,992 MACs with 849,408 PE weight
+writes and 5,841,920 PE activation writes. Against an explicit no-reuse model
+that reloads one weight and one activation into the PE for every MAC, this is
+**93.21% fewer weight loads**, **53.27% fewer activation loads**, or
+**73.24% fewer combined operand-load events**. Local scratchpad reads and psum
+updates still occur; these percentages are not total memory-traffic reductions.
+
+**What actually passed on the board:** 100 MHz operation, four trained images
+repeated three times with every intermediate tensor exact, DMA/reset/fault
+checks, and mean **2.408 s/image** through the complete host API. Mean core-busy
+time is **36.61 ms**; it excludes host/idle time and is not end-to-end throughput.
+The measured end-to-end rate is **0.415 images/s**. The current limit is Python
+tiling/allocation/DMA overhead, so the reuse percentages must not be converted
+into an application speedup.
+
+These are improvements over the stated no-reuse load model and a practical
+implementation of the paper's ideas, not a measured speed or energy advantage
+over the Eyeriss ASIC. No matched non-RS board baseline or power measurement
+exists. See [Eyeriss comparison and reproducible calculations](docs/EYERISS_COMPARISON.md).
+
 ## Run on a PYNQ-Z2
 
 Opening/building the Vivado project does not require training. To run inference,

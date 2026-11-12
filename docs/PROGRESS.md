@@ -1,5 +1,15 @@
 # Live implementation status
 
+## Eyeriss-based improvement reporting (2026-11-12)
+
+- Added paper-linked reuse mechanisms and measured board performance to README.
+- EYERISS_COMPARISON.md distinguishes RTL PE-load reductions from actual board
+  latency/correctness, and defines the hypothetical no-reuse comparison explicitly.
+- Counter-derived reductions: 93.21% weight loads, 53.27% activation loads,
+  73.24% combined operand loads. These are not measured DDR/power savings.
+- Calculations independently recomputed from retained manifests/board JSON;
+  inputs, formulas, means and limitations are in reports/eyeriss-comparison.json.
+
 ## Final main publication (2026-11-12)
 
 - README now documents ordinary default-branch clone/open instructions,

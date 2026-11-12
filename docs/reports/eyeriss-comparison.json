@@ -1,0 +1,30 @@
+{
+  "paper": "https://eems.mit.edu/wp-content/uploads/2016/04/eyeriss_isca_2016.pdf",
+  "simulation": {
+    "source": "docs/reports/network-manifest.json",
+    "convolution_macs": 12500992,
+    "pe_weight_writes": 849408,
+    "pe_activation_writes": 5841920,
+    "comparison": "Hypothetical no-reuse model: one PE weight-load write and one PE activation-load write per convolution MAC; not a measured board baseline",
+    "weight_load_reduction_percent": 93.2052752293578,
+    "activation_load_reduction_percent": 53.268348623853214,
+    "combined_load_reduction_percent": 73.23681192660551
+  },
+  "board": {
+    "source": "docs/reports/board-2025.2/trained-inference.json",
+    "runs": 12,
+    "exact_values": 1377144,
+    "mean_host_seconds": 2.408329553252164,
+    "images_per_second": 0.41522556522616205,
+    "mean_core_busy_cycles": 3661019.3333333335,
+    "mean_core_busy_ms_at_100mhz": 36.610193333333335,
+    "mean_transport_seconds": 1.6515831837265675,
+    "mean_compile_and_assembly_seconds": 0.7567463695255962
+  },
+  "limitations": [
+    "No measured non-RS board baseline",
+    "No power/energy measurement",
+    "PE load counts are RTL simulation evidence, not board DDR counters",
+    "No normalized speedup over the Eyeriss ASIC is established"
+  ]
+}
