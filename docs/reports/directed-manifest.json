@@ -1,0 +1,9 @@
+{
+  "inputs": 34401,
+  "outputs": 10524,
+  "packets": 94,
+  "macs": 105447,
+  "pe_activation_writes": 64205,
+  "pe_weight_writes": 8409,
+  "tensors": {}
+}

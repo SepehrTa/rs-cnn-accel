@@ -1,0 +1,153 @@
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+WARNING: [IP_Flow 19-5101] Packaging a component with a SystemVerilog top file is not fully supported. Please refer to UG1118 'Creating and Packaging Custom IP'.
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(64) on '/axi_dma_0' with propagated value(32). Command ignored
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/memory/xbar/m_axi_bid'(1) to pin: '/memory/m00_couplers/S_AXI_bid'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/memory/xbar/m_axi_rid'(1) to pin: '/memory/m00_couplers/S_AXI_rid'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/ps7/S_AXI_HP0_WID'(6) to pin: '/memory/M00_AXI_wid'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/ps7/S_AXI_HP0_ARID'(6) to pin: '/memory/M00_AXI_arid'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/ps7/S_AXI_HP0_AWID'(6) to pin: '/memory/M00_AXI_awid'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/memory/xbar/m_axi_bid'(1) to pin: '/memory/m00_couplers/S_AXI_bid'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/memory/xbar/m_axi_rid'(1) to pin: '/memory/m00_couplers/S_AXI_rid'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/ps7/S_AXI_HP0_WID'(6) to pin: '/memory/M00_AXI_wid'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/ps7/S_AXI_HP0_ARID'(6) to pin: '/memory/M00_AXI_arid'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/ps7/S_AXI_HP0_AWID'(6) to pin: '/memory/M00_AXI_awid'(1) - Only lower order bits will be connected.
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/ip/system_control_imp_auto_pc_0/system_control_imp_auto_pc_0_ooc.xdc'
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/ip/system_memory_imp_auto_pc_0/system_memory_imp_auto_pc_0_ooc.xdc'
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/ip/system_memory_imp_auto_pc_1/system_memory_imp_auto_pc_1_ooc.xdc'
+WARNING: [BD 41-2925] The design that will be created by this Tcl script contains the following module references: rs_accel_top.
+WARNING: [Synth 8-7071] port 'mm2s_prmry_reset_out_n' of module 'system_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:1233]
+WARNING: [Synth 8-7071] port 's2mm_prmry_reset_out_n' of module 'system_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:1233]
+WARNING: [Synth 8-7071] port 'mm2s_introut' of module 'system_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:1233]
+WARNING: [Synth 8-7071] port 's2mm_introut' of module 'system_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:1233]
+WARNING: [Synth 8-7071] port 'axi_dma_tstvec' of module 'system_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:1233]
+WARNING: [Synth 8-7023] instance 'axi_dma_0' of module 'system_axi_dma_0_0' has 64 connections declared, but only 59 given [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:1233]
+WARNING: [Synth 8-689] width (4) of port connection 'm_axi_wstrb' does not match port width (8) of module 'system_control_imp_xbar_0' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:2038]
+WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'system_control_imp_xbar_0' is unconnected for instance 'xbar' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:2020]
+WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'system_control_imp_xbar_0' is unconnected for instance 'xbar' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:2020]
+WARNING: [Synth 8-7023] instance 'xbar' of module 'system_control_imp_xbar_0' has 40 connections declared, but only 38 given [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:2020]
+WARNING: [Synth 8-689] width (1) of port connection 's_axi_arready' does not match port width (2) of module 'system_memory_imp_xbar_0' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:2560]
+WARNING: [Synth 8-689] width (64) of port connection 's_axi_rdata' does not match port width (128) of module 'system_memory_imp_xbar_0' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:2577]
+WARNING: [Synth 8-689] width (1) of port connection 's_axi_rlast' does not match port width (2) of module 'system_memory_imp_xbar_0' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:2578]
+WARNING: [Synth 8-689] width (2) of port connection 's_axi_rresp' does not match port width (4) of module 'system_memory_imp_xbar_0' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:2580]
+WARNING: [Synth 8-689] width (1) of port connection 's_axi_rvalid' does not match port width (2) of module 'system_memory_imp_xbar_0' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:2581]
+WARNING: [Synth 8-7071] port 's_axi_bid' of module 'system_memory_imp_xbar_0' is unconnected for instance 'xbar' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:2511]
+WARNING: [Synth 8-7071] port 's_axi_rid' of module 'system_memory_imp_xbar_0' is unconnected for instance 'xbar' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:2511]
+WARNING: [Synth 8-7023] instance 'xbar' of module 'system_memory_imp_xbar_0' has 78 connections declared, but only 76 given [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:2511]
+WARNING: [Synth 8-7071] port 'USB0_PORT_INDCTL' of module 'system_ps7_0' is unconnected for instance 'ps7' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:1451]
+WARNING: [Synth 8-7071] port 'USB0_VBUS_PWRSELECT' of module 'system_ps7_0' is unconnected for instance 'ps7' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:1451]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RCOUNT' of module 'system_ps7_0' is unconnected for instance 'ps7' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:1451]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_WCOUNT' of module 'system_ps7_0' is unconnected for instance 'ps7' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:1451]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RACOUNT' of module 'system_ps7_0' is unconnected for instance 'ps7' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:1451]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_WACOUNT' of module 'system_ps7_0' is unconnected for instance 'ps7' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:1451]
+WARNING: [Synth 8-7071] port 'FCLK_CLK1' of module 'system_ps7_0' is unconnected for instance 'ps7' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:1451]
+WARNING: [Synth 8-7071] port 'FCLK_CLK2' of module 'system_ps7_0' is unconnected for instance 'ps7' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:1451]
+WARNING: [Synth 8-7071] port 'FCLK_CLK3' of module 'system_ps7_0' is unconnected for instance 'ps7' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:1451]
+WARNING: [Synth 8-7023] instance 'ps7' of module 'system_ps7_0' has 114 connections declared, but only 105 given [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:1451]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'system_reset_0' is unconnected for instance 'reset' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:1557]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'system_reset_0' is unconnected for instance 'reset' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:1557]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'system_reset_0' is unconnected for instance 'reset' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:1557]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'system_reset_0' is unconnected for instance 'reset' [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:1557]
+WARNING: [Synth 8-7023] instance 'reset' of module 'system_reset_0' has 10 connections declared, but only 6 given [d:/FPGA/rs-cnn-accel/build/board-final/rs_board.gen/sources_1/bd/system/synth/system.v:1557]
+WARNING: [Synth 8-7129] Port M_ACLK in module s01_couplers_imp_1T2LWMQ is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_ARESETN in module s01_couplers_imp_1T2LWMQ is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_ACLK in module s00_couplers_imp_J4K0KJ is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_ARESETN in module s00_couplers_imp_J4K0KJ is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_ACLK in module m00_couplers_imp_W0H1F6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_ARESETN in module m00_couplers_imp_W0H1F6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_ACLK in module m00_couplers_imp_W0H1F6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_ARESETN in module m00_couplers_imp_W0H1F6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M00_ACLK in module system_memory_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M00_ARESETN in module system_memory_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S00_ACLK in module system_memory_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S00_ARESETN in module system_memory_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S01_ACLK in module system_memory_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S01_ARESETN in module system_memory_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_ACLK in module s00_couplers_imp_5VD14K is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_ARESETN in module s00_couplers_imp_5VD14K is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_ACLK in module m01_couplers_imp_132GQ9G is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_ARESETN in module m01_couplers_imp_132GQ9G is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_ACLK in module m01_couplers_imp_132GQ9G is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_ARESETN in module m01_couplers_imp_132GQ9G is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_ACLK in module m00_couplers_imp_9M4DID is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_ARESETN in module m00_couplers_imp_9M4DID is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_ACLK in module m00_couplers_imp_9M4DID is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_ARESETN in module m00_couplers_imp_9M4DID is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M00_ACLK in module system_control_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M00_ARESETN in module system_control_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M01_ACLK in module system_control_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M01_ARESETN in module system_control_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S00_ACLK in module system_control_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S00_ARESETN in module system_control_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M00_ACLK in module system_memory_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M00_ARESETN in module system_memory_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M00_AXI_bid[5] in module system_memory_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M00_AXI_bid[4] in module system_memory_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M00_AXI_bid[3] in module system_memory_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M00_AXI_bid[2] in module system_memory_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M00_AXI_bid[1] in module system_memory_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M00_AXI_rid[5] in module system_memory_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M00_AXI_rid[4] in module system_memory_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M00_AXI_rid[3] in module system_memory_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M00_AXI_rid[2] in module system_memory_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M00_AXI_rid[1] in module system_memory_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S00_ACLK in module system_memory_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S00_ARESETN in module system_memory_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S01_ACLK in module system_memory_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S01_ARESETN in module system_memory_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M00_ACLK in module system_control_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M00_ARESETN in module system_control_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M01_ACLK in module system_control_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M01_ARESETN in module system_control_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S00_ACLK in module system_control_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S00_ARESETN in module system_control_0 is either unconnected or has no load
+synth_design completed successfully
+link_design completed successfully
+opt_design completed successfully
+report_drc completed successfully
+place_design completed successfully
+phys_opt_design completed successfully
+  Number of Failed Nets               = 16416
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+ Verification completed successfully
+route_design completed successfully
+report_drc completed successfully
+report_methodology completed successfully
+WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
+report_power completed successfully
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+write_bitstream completed successfully
+report_drc completed successfully
+Read placeStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.303 . Memory (MB): peak = 1846.375 ; gain = 17.836
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1846.375 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.111 . Memory (MB): peak = 1846.375 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.446 . Memory (MB): peak = 1846.375 ; gain = 17.836
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.483 . Memory (MB): peak = 1846.375 ; gain = 18.801
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1846.375 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1864 instances were transformed.
+  RAM256X1S => RAM256X1S (MUXF7(x2), MUXF8, RAMS64E(x4)): 32 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 52 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 1633 instances
+  RAM64M => RAM64M (RAMD64E(x4)): 144 instances
+  SRLC32E => SRL16E: 3 instances
+
+open_run: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1846.375 ; gain = 1034.758
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 4 CPUs
+Command: report_drc -file D:/FPGA/rs-cnn-accel/build/board-final/drc.rpt
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 4 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file D:/FPGA/rs-cnn-accel/build/board-final/drc.rpt.
+report_drc completed successfully
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 12 00:49:18 2026...

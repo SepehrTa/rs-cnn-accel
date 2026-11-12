@@ -1,0 +1,20 @@
+
+****** xsim v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Thu Nov 12 00:43:16 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_stream_snapshot/xsim_script.tcl
+# xsim {tb_stream_snapshot} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS REUSE macs=12500992 PE_act_writes=5841920 PE_weight_writes=849408
+PASS RTL inputs=2262426 outputs=114762 packets=581 busy_cycles=4511441 wall_cycles=4512027
+$finish called at time : 45120305 ns : File "D:/FPGA/rs-cnn-accel/sim/tb_stream.sv" Line 104
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:35 . Memory (MB): peak = 204.832 ; gain = 0.172
+exit
+INFO: xsimkernel Simulation Memory Usage: 21448 KB (Peak: 21448 KB), Simulation CPU Usage: 34608 ms
+INFO: [Common 17-206] Exiting xsim at Thu Nov 12 00:43:52 2026...

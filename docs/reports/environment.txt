@@ -1,0 +1,7 @@
+Python 3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]
+NumPy 2.4.3
+OS Windows-11-10.0.26300-SP0
+Vivado/XSim 2026.1, build 6511674
+Target xc7z020clg400-1; FCLK0 100 MHz
+Board execution: NOT RUN
+Trained accuracy: NOT RUN

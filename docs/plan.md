@@ -1,5 +1,9 @@
 # Plan
 
+Historical plan retained for context. The implemented 6x8 schedule and current
+milestones are in [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md), with actual
+results in [VALIDATION_REPORT.md](VALIDATION_REPORT.md).
+
 The goal: an Eyeriss-style accelerator ([Chen et al., JSSC 2017](https://doi.org/10.1109/JSSC.2016.2616357))
 on a PYNQ-Z2, using the Row Stationary (RS) dataflow, running ResNet-8 on CIFAR-10
 (the MLPerf Tiny image-classification model) end to end on the board.

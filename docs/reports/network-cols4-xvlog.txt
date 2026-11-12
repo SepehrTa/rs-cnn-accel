@@ -1,0 +1,14 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/FPGA/rs-cnn-accel/hw/rs_accel_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_accel_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/FPGA/rs-cnn-accel/hw/rs_axis_buffer.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_axis_buffer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/FPGA/rs-cnn-accel/hw/rs_pe.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/FPGA/rs-cnn-accel/hw/rs_postprocess.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_postprocess
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/FPGA/rs-cnn-accel/hw/rs_stream_core.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_stream_core
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/FPGA/rs-cnn-accel/sim/tb_stream.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_stream
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/FPGA/rs-cnn-accel/build/sim/network-cols4/tb_config.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_config

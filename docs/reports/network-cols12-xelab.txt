@@ -1,0 +1,19 @@
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/vivado/2026.1/Vivado/bin/unwrapped/win64.o/xelab.exe tb_config -s tb_stream_snapshot 
+Multi-threading is on. Using 22 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.rs_axis_buffer_default
+Compiling module work.rs_pe
+Compiling module work.rs_postprocess
+Compiling module work.rs_stream_core(COLS=12)
+Compiling module work.rs_accel_top(COLS=12)
+Compiling module work.tb_stream(COLS=12)
+Compiling module work.tb_config
+Built simulation snapshot tb_stream_snapshot

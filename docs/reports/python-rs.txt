@@ -1,0 +1,30 @@
+COMMAND: python tests/test_rs.py
+PASS  stem             e=11 p= 4 q= 3 r=1 t=4  data exact, counts match
+PASS  stem             e= 5 p= 4 q= 3 r=1 t=3  data exact, counts match
+PASS  stem             e=14 p= 9 q= 1 r=1 t=1  data exact, counts match
+PASS  block1.conv1     e=11 p=16 q= 4 r=4 t=1  data exact, counts match
+PASS  block1.conv1     e= 4 p= 5 q= 4 r=1 t=1  data exact, counts match
+PASS  block1.conv1     e= 5 p= 6 q= 2 r=2 t=1  data exact, counts match
+PASS  block1.conv2     e=11 p=16 q= 4 r=4 t=1  data exact, counts match
+PASS  block1.conv2     e=10 p= 9 q= 4 r=1 t=1  data exact, counts match
+PASS  block1.conv2     e=11 p= 5 q= 2 r=1 t=1  data exact, counts match
+PASS  block2.conv1     e= 8 p=16 q= 4 r=2 t=2  data exact, counts match
+PASS  block2.conv1     e= 4 p= 1 q= 3 r=1 t=2  data exact, counts match
+PASS  block2.conv1     e= 6 p= 6 q= 3 r=4 t=1  data exact, counts match
+PASS  block2.conv2     e= 8 p=16 q= 4 r=4 t=1  data exact, counts match
+PASS  block2.conv2     e= 2 p= 5 q= 2 r=1 t=1  data exact, counts match
+PASS  block2.conv2     e= 1 p= 4 q= 2 r=1 t=4  data exact, counts match
+PASS  block2.shortcut  e= 8 p= 8 q= 8 r=2 t=4  data exact, counts match
+PASS  block2.shortcut  e= 2 p=12 q= 2 r=1 t=1  data exact, counts match
+PASS  block2.shortcut  e= 4 p= 6 q=12 r=1 t=4  data exact, counts match
+PASS  block3.conv1     e= 8 p=16 q= 4 r=2 t=2  data exact, counts match
+PASS  block3.conv1     e= 2 p= 9 q= 1 r=2 t=1  data exact, counts match
+PASS  block3.conv1     e= 5 p=12 q= 4 r=2 t=1  data exact, counts match
+PASS  block3.conv2     e= 8 p=16 q= 4 r=4 t=1  data exact, counts match
+PASS  block3.conv2     e= 5 p=12 q= 4 r=2 t=2  data exact, counts match
+PASS  block3.conv2     e= 5 p= 4 q= 4 r=2 t=1  data exact, counts match
+PASS  block3.shortcut  e= 8 p=16 q=12 r=2 t=4  data exact, counts match
+PASS  block3.shortcut  e= 7 p=22 q= 5 r=2 t=1  data exact, counts match
+PASS  block3.shortcut  e= 8 p=24 q= 2 r=3 t=1  data exact, counts match
+
+ALL PASS

@@ -1,0 +1,1157 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
+| Date         : Thu Nov 12 00:45:18 2026
+| Host         : Sepehr-PC running 64-bit major release  (build 9200)
+| Command      : report_drc -file D:/FPGA/rs-cnn-accel/build/synth/drc_route.rpt
+| Design       : rs_accel_top
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: rs_accel_top
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max checks: <unlimited>
+             Checks found: 223
++-----------+----------+------------------------+--------+
+| Rule      | Severity | Description            | Checks |
++-----------+----------+------------------------+--------+
+| DPIP-1    | Warning  | Input pipelining       | 162    |
+| DPOP-1    | Warning  | PREG Output pipelining | 50     |
+| DPOP-2    | Warning  | MREG Output pipelining | 9      |
+| RTSTAT-10 | Warning  | No routable loads      | 1      |
+| ZPS7-1    | Warning  | PS7 block required     | 1      |
++-----------+----------+------------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+DPIP-1#1 Warning
+Input pipelining  
+DSP core/add_pb_reg input core/add_pb_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#2 Warning
+Input pipelining  
+DSP core/b_scaled input core/b_scaled/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#3 Warning
+Input pipelining  
+DSP core/fc_hi_reg input core/fc_hi_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#4 Warning
+Input pipelining  
+DSP core/fc_hi_reg input core/fc_hi_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#5 Warning
+Input pipelining  
+DSP core/fc_lo_reg input core/fc_lo_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#6 Warning
+Input pipelining  
+DSP core/fc_lo_reg input core/fc_lo_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#7 Warning
+Input pipelining  
+DSP core/fc_product_reg input core/fc_product_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#8 Warning
+Input pipelining  
+DSP core/fc_product_reg input core/fc_product_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#9 Warning
+Input pipelining  
+DSP core/fc_product_reg input core/fc_product_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#10 Warning
+Input pipelining  
+DSP core/groups[0].prows[0].pcols[0].pe/p_1_in input core/groups[0].prows[0].pcols[0].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#11 Warning
+Input pipelining  
+DSP core/groups[0].prows[0].pcols[0].pe/p_1_in input core/groups[0].prows[0].pcols[0].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#12 Warning
+Input pipelining  
+DSP core/groups[0].prows[0].pcols[0].pe/p_1_in input core/groups[0].prows[0].pcols[0].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#13 Warning
+Input pipelining  
+DSP core/groups[0].prows[0].pcols[1].pe/p_1_in input core/groups[0].prows[0].pcols[1].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#14 Warning
+Input pipelining  
+DSP core/groups[0].prows[0].pcols[1].pe/p_1_in input core/groups[0].prows[0].pcols[1].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#15 Warning
+Input pipelining  
+DSP core/groups[0].prows[0].pcols[1].pe/p_1_in input core/groups[0].prows[0].pcols[1].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#16 Warning
+Input pipelining  
+DSP core/groups[0].prows[0].pcols[2].pe/p_1_in input core/groups[0].prows[0].pcols[2].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#17 Warning
+Input pipelining  
+DSP core/groups[0].prows[0].pcols[2].pe/p_1_in input core/groups[0].prows[0].pcols[2].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#18 Warning
+Input pipelining  
+DSP core/groups[0].prows[0].pcols[2].pe/p_1_in input core/groups[0].prows[0].pcols[2].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#19 Warning
+Input pipelining  
+DSP core/groups[0].prows[0].pcols[3].pe/p_1_in input core/groups[0].prows[0].pcols[3].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#20 Warning
+Input pipelining  
+DSP core/groups[0].prows[0].pcols[3].pe/p_1_in input core/groups[0].prows[0].pcols[3].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#21 Warning
+Input pipelining  
+DSP core/groups[0].prows[0].pcols[3].pe/p_1_in input core/groups[0].prows[0].pcols[3].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#22 Warning
+Input pipelining  
+DSP core/groups[0].prows[0].pcols[4].pe/p_1_in input core/groups[0].prows[0].pcols[4].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#23 Warning
+Input pipelining  
+DSP core/groups[0].prows[0].pcols[4].pe/p_1_in input core/groups[0].prows[0].pcols[4].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#24 Warning
+Input pipelining  
+DSP core/groups[0].prows[0].pcols[4].pe/p_1_in input core/groups[0].prows[0].pcols[4].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#25 Warning
+Input pipelining  
+DSP core/groups[0].prows[0].pcols[5].pe/p_1_in input core/groups[0].prows[0].pcols[5].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#26 Warning
+Input pipelining  
+DSP core/groups[0].prows[0].pcols[5].pe/p_1_in input core/groups[0].prows[0].pcols[5].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#27 Warning
+Input pipelining  
+DSP core/groups[0].prows[0].pcols[5].pe/p_1_in input core/groups[0].prows[0].pcols[5].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#28 Warning
+Input pipelining  
+DSP core/groups[0].prows[0].pcols[6].pe/p_1_in input core/groups[0].prows[0].pcols[6].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#29 Warning
+Input pipelining  
+DSP core/groups[0].prows[0].pcols[6].pe/p_1_in input core/groups[0].prows[0].pcols[6].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#30 Warning
+Input pipelining  
+DSP core/groups[0].prows[0].pcols[6].pe/p_1_in input core/groups[0].prows[0].pcols[6].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#31 Warning
+Input pipelining  
+DSP core/groups[0].prows[0].pcols[7].pe/p_1_in input core/groups[0].prows[0].pcols[7].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#32 Warning
+Input pipelining  
+DSP core/groups[0].prows[0].pcols[7].pe/p_1_in input core/groups[0].prows[0].pcols[7].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#33 Warning
+Input pipelining  
+DSP core/groups[0].prows[0].pcols[7].pe/p_1_in input core/groups[0].prows[0].pcols[7].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#34 Warning
+Input pipelining  
+DSP core/groups[0].prows[1].pcols[0].pe/p_1_in input core/groups[0].prows[1].pcols[0].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#35 Warning
+Input pipelining  
+DSP core/groups[0].prows[1].pcols[0].pe/p_1_in input core/groups[0].prows[1].pcols[0].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#36 Warning
+Input pipelining  
+DSP core/groups[0].prows[1].pcols[0].pe/p_1_in input core/groups[0].prows[1].pcols[0].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#37 Warning
+Input pipelining  
+DSP core/groups[0].prows[1].pcols[1].pe/p_1_in input core/groups[0].prows[1].pcols[1].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#38 Warning
+Input pipelining  
+DSP core/groups[0].prows[1].pcols[1].pe/p_1_in input core/groups[0].prows[1].pcols[1].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#39 Warning
+Input pipelining  
+DSP core/groups[0].prows[1].pcols[1].pe/p_1_in input core/groups[0].prows[1].pcols[1].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#40 Warning
+Input pipelining  
+DSP core/groups[0].prows[1].pcols[2].pe/p_1_in input core/groups[0].prows[1].pcols[2].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#41 Warning
+Input pipelining  
+DSP core/groups[0].prows[1].pcols[2].pe/p_1_in input core/groups[0].prows[1].pcols[2].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#42 Warning
+Input pipelining  
+DSP core/groups[0].prows[1].pcols[2].pe/p_1_in input core/groups[0].prows[1].pcols[2].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#43 Warning
+Input pipelining  
+DSP core/groups[0].prows[1].pcols[3].pe/p_1_in input core/groups[0].prows[1].pcols[3].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#44 Warning
+Input pipelining  
+DSP core/groups[0].prows[1].pcols[3].pe/p_1_in input core/groups[0].prows[1].pcols[3].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#45 Warning
+Input pipelining  
+DSP core/groups[0].prows[1].pcols[3].pe/p_1_in input core/groups[0].prows[1].pcols[3].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#46 Warning
+Input pipelining  
+DSP core/groups[0].prows[1].pcols[4].pe/p_1_in input core/groups[0].prows[1].pcols[4].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#47 Warning
+Input pipelining  
+DSP core/groups[0].prows[1].pcols[4].pe/p_1_in input core/groups[0].prows[1].pcols[4].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#48 Warning
+Input pipelining  
+DSP core/groups[0].prows[1].pcols[4].pe/p_1_in input core/groups[0].prows[1].pcols[4].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#49 Warning
+Input pipelining  
+DSP core/groups[0].prows[1].pcols[5].pe/p_1_in input core/groups[0].prows[1].pcols[5].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#50 Warning
+Input pipelining  
+DSP core/groups[0].prows[1].pcols[5].pe/p_1_in input core/groups[0].prows[1].pcols[5].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#51 Warning
+Input pipelining  
+DSP core/groups[0].prows[1].pcols[5].pe/p_1_in input core/groups[0].prows[1].pcols[5].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#52 Warning
+Input pipelining  
+DSP core/groups[0].prows[1].pcols[6].pe/p_1_in input core/groups[0].prows[1].pcols[6].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#53 Warning
+Input pipelining  
+DSP core/groups[0].prows[1].pcols[6].pe/p_1_in input core/groups[0].prows[1].pcols[6].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#54 Warning
+Input pipelining  
+DSP core/groups[0].prows[1].pcols[6].pe/p_1_in input core/groups[0].prows[1].pcols[6].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#55 Warning
+Input pipelining  
+DSP core/groups[0].prows[1].pcols[7].pe/p_1_in input core/groups[0].prows[1].pcols[7].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#56 Warning
+Input pipelining  
+DSP core/groups[0].prows[1].pcols[7].pe/p_1_in input core/groups[0].prows[1].pcols[7].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#57 Warning
+Input pipelining  
+DSP core/groups[0].prows[1].pcols[7].pe/p_1_in input core/groups[0].prows[1].pcols[7].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#58 Warning
+Input pipelining  
+DSP core/groups[0].prows[2].pcols[0].pe/p_1_in input core/groups[0].prows[2].pcols[0].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#59 Warning
+Input pipelining  
+DSP core/groups[0].prows[2].pcols[0].pe/p_1_in input core/groups[0].prows[2].pcols[0].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#60 Warning
+Input pipelining  
+DSP core/groups[0].prows[2].pcols[0].pe/p_1_in input core/groups[0].prows[2].pcols[0].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#61 Warning
+Input pipelining  
+DSP core/groups[0].prows[2].pcols[1].pe/p_1_in input core/groups[0].prows[2].pcols[1].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#62 Warning
+Input pipelining  
+DSP core/groups[0].prows[2].pcols[1].pe/p_1_in input core/groups[0].prows[2].pcols[1].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#63 Warning
+Input pipelining  
+DSP core/groups[0].prows[2].pcols[1].pe/p_1_in input core/groups[0].prows[2].pcols[1].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#64 Warning
+Input pipelining  
+DSP core/groups[0].prows[2].pcols[2].pe/p_1_in input core/groups[0].prows[2].pcols[2].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#65 Warning
+Input pipelining  
+DSP core/groups[0].prows[2].pcols[2].pe/p_1_in input core/groups[0].prows[2].pcols[2].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#66 Warning
+Input pipelining  
+DSP core/groups[0].prows[2].pcols[2].pe/p_1_in input core/groups[0].prows[2].pcols[2].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#67 Warning
+Input pipelining  
+DSP core/groups[0].prows[2].pcols[3].pe/p_1_in input core/groups[0].prows[2].pcols[3].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#68 Warning
+Input pipelining  
+DSP core/groups[0].prows[2].pcols[3].pe/p_1_in input core/groups[0].prows[2].pcols[3].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#69 Warning
+Input pipelining  
+DSP core/groups[0].prows[2].pcols[3].pe/p_1_in input core/groups[0].prows[2].pcols[3].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#70 Warning
+Input pipelining  
+DSP core/groups[0].prows[2].pcols[4].pe/p_1_in input core/groups[0].prows[2].pcols[4].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#71 Warning
+Input pipelining  
+DSP core/groups[0].prows[2].pcols[4].pe/p_1_in input core/groups[0].prows[2].pcols[4].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#72 Warning
+Input pipelining  
+DSP core/groups[0].prows[2].pcols[4].pe/p_1_in input core/groups[0].prows[2].pcols[4].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#73 Warning
+Input pipelining  
+DSP core/groups[0].prows[2].pcols[5].pe/p_1_in input core/groups[0].prows[2].pcols[5].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#74 Warning
+Input pipelining  
+DSP core/groups[0].prows[2].pcols[5].pe/p_1_in input core/groups[0].prows[2].pcols[5].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#75 Warning
+Input pipelining  
+DSP core/groups[0].prows[2].pcols[5].pe/p_1_in input core/groups[0].prows[2].pcols[5].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#76 Warning
+Input pipelining  
+DSP core/groups[0].prows[2].pcols[6].pe/p_1_in input core/groups[0].prows[2].pcols[6].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#77 Warning
+Input pipelining  
+DSP core/groups[0].prows[2].pcols[6].pe/p_1_in input core/groups[0].prows[2].pcols[6].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#78 Warning
+Input pipelining  
+DSP core/groups[0].prows[2].pcols[6].pe/p_1_in input core/groups[0].prows[2].pcols[6].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#79 Warning
+Input pipelining  
+DSP core/groups[0].prows[2].pcols[7].pe/p_1_in input core/groups[0].prows[2].pcols[7].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#80 Warning
+Input pipelining  
+DSP core/groups[0].prows[2].pcols[7].pe/p_1_in input core/groups[0].prows[2].pcols[7].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#81 Warning
+Input pipelining  
+DSP core/groups[0].prows[2].pcols[7].pe/p_1_in input core/groups[0].prows[2].pcols[7].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#82 Warning
+Input pipelining  
+DSP core/groups[1].prows[0].pcols[0].pe/p_1_in input core/groups[1].prows[0].pcols[0].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#83 Warning
+Input pipelining  
+DSP core/groups[1].prows[0].pcols[0].pe/p_1_in input core/groups[1].prows[0].pcols[0].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#84 Warning
+Input pipelining  
+DSP core/groups[1].prows[0].pcols[0].pe/p_1_in input core/groups[1].prows[0].pcols[0].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#85 Warning
+Input pipelining  
+DSP core/groups[1].prows[0].pcols[1].pe/p_1_in input core/groups[1].prows[0].pcols[1].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#86 Warning
+Input pipelining  
+DSP core/groups[1].prows[0].pcols[1].pe/p_1_in input core/groups[1].prows[0].pcols[1].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#87 Warning
+Input pipelining  
+DSP core/groups[1].prows[0].pcols[1].pe/p_1_in input core/groups[1].prows[0].pcols[1].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#88 Warning
+Input pipelining  
+DSP core/groups[1].prows[0].pcols[2].pe/p_1_in input core/groups[1].prows[0].pcols[2].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#89 Warning
+Input pipelining  
+DSP core/groups[1].prows[0].pcols[2].pe/p_1_in input core/groups[1].prows[0].pcols[2].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#90 Warning
+Input pipelining  
+DSP core/groups[1].prows[0].pcols[2].pe/p_1_in input core/groups[1].prows[0].pcols[2].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#91 Warning
+Input pipelining  
+DSP core/groups[1].prows[0].pcols[3].pe/p_1_in input core/groups[1].prows[0].pcols[3].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#92 Warning
+Input pipelining  
+DSP core/groups[1].prows[0].pcols[3].pe/p_1_in input core/groups[1].prows[0].pcols[3].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#93 Warning
+Input pipelining  
+DSP core/groups[1].prows[0].pcols[3].pe/p_1_in input core/groups[1].prows[0].pcols[3].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#94 Warning
+Input pipelining  
+DSP core/groups[1].prows[0].pcols[4].pe/p_1_in input core/groups[1].prows[0].pcols[4].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#95 Warning
+Input pipelining  
+DSP core/groups[1].prows[0].pcols[4].pe/p_1_in input core/groups[1].prows[0].pcols[4].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#96 Warning
+Input pipelining  
+DSP core/groups[1].prows[0].pcols[4].pe/p_1_in input core/groups[1].prows[0].pcols[4].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#97 Warning
+Input pipelining  
+DSP core/groups[1].prows[0].pcols[5].pe/p_1_in input core/groups[1].prows[0].pcols[5].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#98 Warning
+Input pipelining  
+DSP core/groups[1].prows[0].pcols[5].pe/p_1_in input core/groups[1].prows[0].pcols[5].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#99 Warning
+Input pipelining  
+DSP core/groups[1].prows[0].pcols[5].pe/p_1_in input core/groups[1].prows[0].pcols[5].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#100 Warning
+Input pipelining  
+DSP core/groups[1].prows[0].pcols[6].pe/p_1_in input core/groups[1].prows[0].pcols[6].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#101 Warning
+Input pipelining  
+DSP core/groups[1].prows[0].pcols[6].pe/p_1_in input core/groups[1].prows[0].pcols[6].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#102 Warning
+Input pipelining  
+DSP core/groups[1].prows[0].pcols[6].pe/p_1_in input core/groups[1].prows[0].pcols[6].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#103 Warning
+Input pipelining  
+DSP core/groups[1].prows[0].pcols[7].pe/p_1_in input core/groups[1].prows[0].pcols[7].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#104 Warning
+Input pipelining  
+DSP core/groups[1].prows[0].pcols[7].pe/p_1_in input core/groups[1].prows[0].pcols[7].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#105 Warning
+Input pipelining  
+DSP core/groups[1].prows[0].pcols[7].pe/p_1_in input core/groups[1].prows[0].pcols[7].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#106 Warning
+Input pipelining  
+DSP core/groups[1].prows[1].pcols[0].pe/p_1_in input core/groups[1].prows[1].pcols[0].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#107 Warning
+Input pipelining  
+DSP core/groups[1].prows[1].pcols[0].pe/p_1_in input core/groups[1].prows[1].pcols[0].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#108 Warning
+Input pipelining  
+DSP core/groups[1].prows[1].pcols[0].pe/p_1_in input core/groups[1].prows[1].pcols[0].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#109 Warning
+Input pipelining  
+DSP core/groups[1].prows[1].pcols[1].pe/p_1_in input core/groups[1].prows[1].pcols[1].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#110 Warning
+Input pipelining  
+DSP core/groups[1].prows[1].pcols[1].pe/p_1_in input core/groups[1].prows[1].pcols[1].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#111 Warning
+Input pipelining  
+DSP core/groups[1].prows[1].pcols[1].pe/p_1_in input core/groups[1].prows[1].pcols[1].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#112 Warning
+Input pipelining  
+DSP core/groups[1].prows[1].pcols[2].pe/p_1_in input core/groups[1].prows[1].pcols[2].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#113 Warning
+Input pipelining  
+DSP core/groups[1].prows[1].pcols[2].pe/p_1_in input core/groups[1].prows[1].pcols[2].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#114 Warning
+Input pipelining  
+DSP core/groups[1].prows[1].pcols[2].pe/p_1_in input core/groups[1].prows[1].pcols[2].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#115 Warning
+Input pipelining  
+DSP core/groups[1].prows[1].pcols[3].pe/p_1_in input core/groups[1].prows[1].pcols[3].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#116 Warning
+Input pipelining  
+DSP core/groups[1].prows[1].pcols[3].pe/p_1_in input core/groups[1].prows[1].pcols[3].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#117 Warning
+Input pipelining  
+DSP core/groups[1].prows[1].pcols[3].pe/p_1_in input core/groups[1].prows[1].pcols[3].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#118 Warning
+Input pipelining  
+DSP core/groups[1].prows[1].pcols[4].pe/p_1_in input core/groups[1].prows[1].pcols[4].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#119 Warning
+Input pipelining  
+DSP core/groups[1].prows[1].pcols[4].pe/p_1_in input core/groups[1].prows[1].pcols[4].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#120 Warning
+Input pipelining  
+DSP core/groups[1].prows[1].pcols[4].pe/p_1_in input core/groups[1].prows[1].pcols[4].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#121 Warning
+Input pipelining  
+DSP core/groups[1].prows[1].pcols[5].pe/p_1_in input core/groups[1].prows[1].pcols[5].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#122 Warning
+Input pipelining  
+DSP core/groups[1].prows[1].pcols[5].pe/p_1_in input core/groups[1].prows[1].pcols[5].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#123 Warning
+Input pipelining  
+DSP core/groups[1].prows[1].pcols[5].pe/p_1_in input core/groups[1].prows[1].pcols[5].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#124 Warning
+Input pipelining  
+DSP core/groups[1].prows[1].pcols[6].pe/p_1_in input core/groups[1].prows[1].pcols[6].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#125 Warning
+Input pipelining  
+DSP core/groups[1].prows[1].pcols[6].pe/p_1_in input core/groups[1].prows[1].pcols[6].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#126 Warning
+Input pipelining  
+DSP core/groups[1].prows[1].pcols[6].pe/p_1_in input core/groups[1].prows[1].pcols[6].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#127 Warning
+Input pipelining  
+DSP core/groups[1].prows[1].pcols[7].pe/p_1_in input core/groups[1].prows[1].pcols[7].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#128 Warning
+Input pipelining  
+DSP core/groups[1].prows[1].pcols[7].pe/p_1_in input core/groups[1].prows[1].pcols[7].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#129 Warning
+Input pipelining  
+DSP core/groups[1].prows[1].pcols[7].pe/p_1_in input core/groups[1].prows[1].pcols[7].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#130 Warning
+Input pipelining  
+DSP core/groups[1].prows[2].pcols[0].pe/p_1_in input core/groups[1].prows[2].pcols[0].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#131 Warning
+Input pipelining  
+DSP core/groups[1].prows[2].pcols[0].pe/p_1_in input core/groups[1].prows[2].pcols[0].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#132 Warning
+Input pipelining  
+DSP core/groups[1].prows[2].pcols[0].pe/p_1_in input core/groups[1].prows[2].pcols[0].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#133 Warning
+Input pipelining  
+DSP core/groups[1].prows[2].pcols[1].pe/p_1_in input core/groups[1].prows[2].pcols[1].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#134 Warning
+Input pipelining  
+DSP core/groups[1].prows[2].pcols[1].pe/p_1_in input core/groups[1].prows[2].pcols[1].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#135 Warning
+Input pipelining  
+DSP core/groups[1].prows[2].pcols[1].pe/p_1_in input core/groups[1].prows[2].pcols[1].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#136 Warning
+Input pipelining  
+DSP core/groups[1].prows[2].pcols[2].pe/p_1_in input core/groups[1].prows[2].pcols[2].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#137 Warning
+Input pipelining  
+DSP core/groups[1].prows[2].pcols[2].pe/p_1_in input core/groups[1].prows[2].pcols[2].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#138 Warning
+Input pipelining  
+DSP core/groups[1].prows[2].pcols[2].pe/p_1_in input core/groups[1].prows[2].pcols[2].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#139 Warning
+Input pipelining  
+DSP core/groups[1].prows[2].pcols[3].pe/p_1_in input core/groups[1].prows[2].pcols[3].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#140 Warning
+Input pipelining  
+DSP core/groups[1].prows[2].pcols[3].pe/p_1_in input core/groups[1].prows[2].pcols[3].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#141 Warning
+Input pipelining  
+DSP core/groups[1].prows[2].pcols[3].pe/p_1_in input core/groups[1].prows[2].pcols[3].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#142 Warning
+Input pipelining  
+DSP core/groups[1].prows[2].pcols[4].pe/p_1_in input core/groups[1].prows[2].pcols[4].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#143 Warning
+Input pipelining  
+DSP core/groups[1].prows[2].pcols[4].pe/p_1_in input core/groups[1].prows[2].pcols[4].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#144 Warning
+Input pipelining  
+DSP core/groups[1].prows[2].pcols[4].pe/p_1_in input core/groups[1].prows[2].pcols[4].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#145 Warning
+Input pipelining  
+DSP core/groups[1].prows[2].pcols[5].pe/p_1_in input core/groups[1].prows[2].pcols[5].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#146 Warning
+Input pipelining  
+DSP core/groups[1].prows[2].pcols[5].pe/p_1_in input core/groups[1].prows[2].pcols[5].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#147 Warning
+Input pipelining  
+DSP core/groups[1].prows[2].pcols[5].pe/p_1_in input core/groups[1].prows[2].pcols[5].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#148 Warning
+Input pipelining  
+DSP core/groups[1].prows[2].pcols[6].pe/p_1_in input core/groups[1].prows[2].pcols[6].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#149 Warning
+Input pipelining  
+DSP core/groups[1].prows[2].pcols[6].pe/p_1_in input core/groups[1].prows[2].pcols[6].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#150 Warning
+Input pipelining  
+DSP core/groups[1].prows[2].pcols[6].pe/p_1_in input core/groups[1].prows[2].pcols[6].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#151 Warning
+Input pipelining  
+DSP core/groups[1].prows[2].pcols[7].pe/p_1_in input core/groups[1].prows[2].pcols[7].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#152 Warning
+Input pipelining  
+DSP core/groups[1].prows[2].pcols[7].pe/p_1_in input core/groups[1].prows[2].pcols[7].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#153 Warning
+Input pipelining  
+DSP core/groups[1].prows[2].pcols[7].pe/p_1_in input core/groups[1].prows[2].pcols[7].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#154 Warning
+Input pipelining  
+DSP core/post/middle_reg input core/post/middle_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#155 Warning
+Input pipelining  
+DSP core/post/middle_reg input core/post/middle_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#156 Warning
+Input pipelining  
+DSP core/post/middle_reg input core/post/middle_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#157 Warning
+Input pipelining  
+DSP core/post/p00_reg input core/post/p00_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#158 Warning
+Input pipelining  
+DSP core/post/p00_reg input core/post/p00_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#159 Warning
+Input pipelining  
+DSP core/post/p10_reg input core/post/p10_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#160 Warning
+Input pipelining  
+DSP core/post/p10_reg input core/post/p10_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#161 Warning
+Input pipelining  
+DSP core/post/p11_reg input core/post/p11_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#162 Warning
+Input pipelining  
+DSP core/post/p11_reg input core/post/p11_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPOP-1#1 Warning
+PREG Output pipelining  
+DSP core/a_scaled output core/a_scaled/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#2 Warning
+PREG Output pipelining  
+DSP core/b_scaled output core/b_scaled/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#3 Warning
+PREG Output pipelining  
+DSP core/groups[0].prows[0].pcols[0].pe/p_1_in output core/groups[0].prows[0].pcols[0].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#4 Warning
+PREG Output pipelining  
+DSP core/groups[0].prows[0].pcols[1].pe/p_1_in output core/groups[0].prows[0].pcols[1].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#5 Warning
+PREG Output pipelining  
+DSP core/groups[0].prows[0].pcols[2].pe/p_1_in output core/groups[0].prows[0].pcols[2].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#6 Warning
+PREG Output pipelining  
+DSP core/groups[0].prows[0].pcols[3].pe/p_1_in output core/groups[0].prows[0].pcols[3].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#7 Warning
+PREG Output pipelining  
+DSP core/groups[0].prows[0].pcols[4].pe/p_1_in output core/groups[0].prows[0].pcols[4].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#8 Warning
+PREG Output pipelining  
+DSP core/groups[0].prows[0].pcols[5].pe/p_1_in output core/groups[0].prows[0].pcols[5].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#9 Warning
+PREG Output pipelining  
+DSP core/groups[0].prows[0].pcols[6].pe/p_1_in output core/groups[0].prows[0].pcols[6].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#10 Warning
+PREG Output pipelining  
+DSP core/groups[0].prows[0].pcols[7].pe/p_1_in output core/groups[0].prows[0].pcols[7].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#11 Warning
+PREG Output pipelining  
+DSP core/groups[0].prows[1].pcols[0].pe/p_1_in output core/groups[0].prows[1].pcols[0].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#12 Warning
+PREG Output pipelining  
+DSP core/groups[0].prows[1].pcols[1].pe/p_1_in output core/groups[0].prows[1].pcols[1].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#13 Warning
+PREG Output pipelining  
+DSP core/groups[0].prows[1].pcols[2].pe/p_1_in output core/groups[0].prows[1].pcols[2].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#14 Warning
+PREG Output pipelining  
+DSP core/groups[0].prows[1].pcols[3].pe/p_1_in output core/groups[0].prows[1].pcols[3].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#15 Warning
+PREG Output pipelining  
+DSP core/groups[0].prows[1].pcols[4].pe/p_1_in output core/groups[0].prows[1].pcols[4].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#16 Warning
+PREG Output pipelining  
+DSP core/groups[0].prows[1].pcols[5].pe/p_1_in output core/groups[0].prows[1].pcols[5].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#17 Warning
+PREG Output pipelining  
+DSP core/groups[0].prows[1].pcols[6].pe/p_1_in output core/groups[0].prows[1].pcols[6].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#18 Warning
+PREG Output pipelining  
+DSP core/groups[0].prows[1].pcols[7].pe/p_1_in output core/groups[0].prows[1].pcols[7].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#19 Warning
+PREG Output pipelining  
+DSP core/groups[0].prows[2].pcols[0].pe/p_1_in output core/groups[0].prows[2].pcols[0].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#20 Warning
+PREG Output pipelining  
+DSP core/groups[0].prows[2].pcols[1].pe/p_1_in output core/groups[0].prows[2].pcols[1].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#21 Warning
+PREG Output pipelining  
+DSP core/groups[0].prows[2].pcols[2].pe/p_1_in output core/groups[0].prows[2].pcols[2].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#22 Warning
+PREG Output pipelining  
+DSP core/groups[0].prows[2].pcols[3].pe/p_1_in output core/groups[0].prows[2].pcols[3].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#23 Warning
+PREG Output pipelining  
+DSP core/groups[0].prows[2].pcols[4].pe/p_1_in output core/groups[0].prows[2].pcols[4].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#24 Warning
+PREG Output pipelining  
+DSP core/groups[0].prows[2].pcols[5].pe/p_1_in output core/groups[0].prows[2].pcols[5].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#25 Warning
+PREG Output pipelining  
+DSP core/groups[0].prows[2].pcols[6].pe/p_1_in output core/groups[0].prows[2].pcols[6].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#26 Warning
+PREG Output pipelining  
+DSP core/groups[0].prows[2].pcols[7].pe/p_1_in output core/groups[0].prows[2].pcols[7].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#27 Warning
+PREG Output pipelining  
+DSP core/groups[1].prows[0].pcols[0].pe/p_1_in output core/groups[1].prows[0].pcols[0].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#28 Warning
+PREG Output pipelining  
+DSP core/groups[1].prows[0].pcols[1].pe/p_1_in output core/groups[1].prows[0].pcols[1].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#29 Warning
+PREG Output pipelining  
+DSP core/groups[1].prows[0].pcols[2].pe/p_1_in output core/groups[1].prows[0].pcols[2].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#30 Warning
+PREG Output pipelining  
+DSP core/groups[1].prows[0].pcols[3].pe/p_1_in output core/groups[1].prows[0].pcols[3].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#31 Warning
+PREG Output pipelining  
+DSP core/groups[1].prows[0].pcols[4].pe/p_1_in output core/groups[1].prows[0].pcols[4].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#32 Warning
+PREG Output pipelining  
+DSP core/groups[1].prows[0].pcols[5].pe/p_1_in output core/groups[1].prows[0].pcols[5].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#33 Warning
+PREG Output pipelining  
+DSP core/groups[1].prows[0].pcols[6].pe/p_1_in output core/groups[1].prows[0].pcols[6].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#34 Warning
+PREG Output pipelining  
+DSP core/groups[1].prows[0].pcols[7].pe/p_1_in output core/groups[1].prows[0].pcols[7].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#35 Warning
+PREG Output pipelining  
+DSP core/groups[1].prows[1].pcols[0].pe/p_1_in output core/groups[1].prows[1].pcols[0].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#36 Warning
+PREG Output pipelining  
+DSP core/groups[1].prows[1].pcols[1].pe/p_1_in output core/groups[1].prows[1].pcols[1].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#37 Warning
+PREG Output pipelining  
+DSP core/groups[1].prows[1].pcols[2].pe/p_1_in output core/groups[1].prows[1].pcols[2].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#38 Warning
+PREG Output pipelining  
+DSP core/groups[1].prows[1].pcols[3].pe/p_1_in output core/groups[1].prows[1].pcols[3].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#39 Warning
+PREG Output pipelining  
+DSP core/groups[1].prows[1].pcols[4].pe/p_1_in output core/groups[1].prows[1].pcols[4].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#40 Warning
+PREG Output pipelining  
+DSP core/groups[1].prows[1].pcols[5].pe/p_1_in output core/groups[1].prows[1].pcols[5].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#41 Warning
+PREG Output pipelining  
+DSP core/groups[1].prows[1].pcols[6].pe/p_1_in output core/groups[1].prows[1].pcols[6].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#42 Warning
+PREG Output pipelining  
+DSP core/groups[1].prows[1].pcols[7].pe/p_1_in output core/groups[1].prows[1].pcols[7].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#43 Warning
+PREG Output pipelining  
+DSP core/groups[1].prows[2].pcols[0].pe/p_1_in output core/groups[1].prows[2].pcols[0].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#44 Warning
+PREG Output pipelining  
+DSP core/groups[1].prows[2].pcols[1].pe/p_1_in output core/groups[1].prows[2].pcols[1].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#45 Warning
+PREG Output pipelining  
+DSP core/groups[1].prows[2].pcols[2].pe/p_1_in output core/groups[1].prows[2].pcols[2].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#46 Warning
+PREG Output pipelining  
+DSP core/groups[1].prows[2].pcols[3].pe/p_1_in output core/groups[1].prows[2].pcols[3].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#47 Warning
+PREG Output pipelining  
+DSP core/groups[1].prows[2].pcols[4].pe/p_1_in output core/groups[1].prows[2].pcols[4].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#48 Warning
+PREG Output pipelining  
+DSP core/groups[1].prows[2].pcols[5].pe/p_1_in output core/groups[1].prows[2].pcols[5].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#49 Warning
+PREG Output pipelining  
+DSP core/groups[1].prows[2].pcols[6].pe/p_1_in output core/groups[1].prows[2].pcols[6].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#50 Warning
+PREG Output pipelining  
+DSP core/groups[1].prows[2].pcols[7].pe/p_1_in output core/groups[1].prows[2].pcols[7].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-2#1 Warning
+MREG Output pipelining  
+DSP core/a_scaled multiplier stage core/a_scaled/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#2 Warning
+MREG Output pipelining  
+DSP core/add_pa_reg multiplier stage core/add_pa_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#3 Warning
+MREG Output pipelining  
+DSP core/add_pb_reg multiplier stage core/add_pb_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#4 Warning
+MREG Output pipelining  
+DSP core/b_scaled multiplier stage core/b_scaled/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#5 Warning
+MREG Output pipelining  
+DSP core/fc_hi_reg multiplier stage core/fc_hi_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#6 Warning
+MREG Output pipelining  
+DSP core/fc_lo_reg multiplier stage core/fc_lo_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#7 Warning
+MREG Output pipelining  
+DSP core/post/p00_reg multiplier stage core/post/p00_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#8 Warning
+MREG Output pipelining  
+DSP core/post/p10_reg multiplier stage core/post/p10_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#9 Warning
+MREG Output pipelining  
+DSP core/post/p11_reg multiplier stage core/post/p11_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+RTSTAT-10#1 Warning
+No routable loads  
+71 net(s) have no routable loads. The problem bus(es) and/or net(s) are core/m_axis_tdata[31:0], core/m_axis_tlast, core/m_axis_tvalid,
+ingress/s_axis_tready, s_axi_arready, s_axi_awready, s_axi_rdata[31:0],
+s_axi_rresp[1], s_axi_wready.
+Related violations: <none>
+
+ZPS7-1#1 Warning
+PS7 block required  
+The PS7 cell must be used in this Zynq design in order to enable correct default configuration.
+Related violations: <none>
+
+

@@ -1,0 +1,1505 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
+| Date         : Thu Nov 12 00:49:18 2026
+| Host         : Sepehr-PC running 64-bit major release  (build 9200)
+| Command      : report_drc -file D:/FPGA/rs-cnn-accel/build/board-final/drc.rpt
+| Design       : system_wrapper
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: impl_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max checks: <unlimited>
+             Checks found: 289
++-----------+----------+-----------------------------+--------+
+| Rule      | Severity | Description                 | Checks |
++-----------+----------+-----------------------------+--------+
+| DPIP-1    | Warning  | Input pipelining            | 162    |
+| DPOP-1    | Warning  | PREG Output pipelining      | 50     |
+| DPOP-2    | Warning  | MREG Output pipelining      | 9      |
+| DPREG-4   | Warning  | DSP48E1_PregDynOpmodeZmuxP: | 48     |
+| PDCN-1569 | Warning  | LUT equation term check     | 3      |
+| REQP-1839 | Warning  | RAMB36 async control check  | 8      |
+| REQP-1840 | Warning  | RAMB18 async control check  | 4      |
+| RTSTAT-10 | Warning  | No routable loads           | 1      |
+| REQP-165  | Advisory | writefirst                  | 2      |
+| REQP-181  | Advisory | writefirst                  | 2      |
++-----------+----------+-----------------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+DPIP-1#1 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/add_pb_reg input system_i/rs_accel_0/inst/core/add_pb_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#2 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/b_scaled input system_i/rs_accel_0/inst/core/b_scaled/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#3 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/fc_hi_reg input system_i/rs_accel_0/inst/core/fc_hi_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#4 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/fc_hi_reg input system_i/rs_accel_0/inst/core/fc_hi_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#5 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/fc_lo_reg input system_i/rs_accel_0/inst/core/fc_lo_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#6 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/fc_lo_reg input system_i/rs_accel_0/inst/core/fc_lo_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#7 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/fc_product_reg input system_i/rs_accel_0/inst/core/fc_product_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#8 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/fc_product_reg input system_i/rs_accel_0/inst/core/fc_product_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#9 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/fc_product_reg input system_i/rs_accel_0/inst/core/fc_product_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#10 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[0].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[0].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#11 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[0].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[0].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#12 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[0].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[0].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#13 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[1].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[1].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#14 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[1].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[1].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#15 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[1].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[1].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#16 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[2].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[2].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#17 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[2].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[2].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#18 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[2].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[2].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#19 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[3].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[3].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#20 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[3].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[3].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#21 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[3].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[3].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#22 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[4].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[4].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#23 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[4].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[4].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#24 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[4].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[4].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#25 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[5].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[5].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#26 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[5].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[5].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#27 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[5].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[5].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#28 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[6].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[6].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#29 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[6].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[6].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#30 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[6].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[6].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#31 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[7].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[7].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#32 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[7].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[7].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#33 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[7].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[7].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#34 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[0].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[0].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#35 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[0].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[0].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#36 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[0].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[0].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#37 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[1].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[1].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#38 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[1].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[1].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#39 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[1].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[1].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#40 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[2].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[2].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#41 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[2].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[2].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#42 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[2].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[2].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#43 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[3].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[3].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#44 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[3].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[3].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#45 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[3].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[3].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#46 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[4].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[4].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#47 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[4].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[4].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#48 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[4].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[4].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#49 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[5].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[5].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#50 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[5].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[5].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#51 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[5].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[5].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#52 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[6].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[6].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#53 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[6].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[6].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#54 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[6].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[6].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#55 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[7].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[7].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#56 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[7].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[7].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#57 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[7].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[7].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#58 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[0].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[0].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#59 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[0].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[0].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#60 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[0].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[0].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#61 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[1].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[1].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#62 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[1].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[1].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#63 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[1].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[1].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#64 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[2].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[2].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#65 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[2].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[2].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#66 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[2].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[2].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#67 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[3].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[3].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#68 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[3].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[3].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#69 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[3].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[3].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#70 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[4].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[4].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#71 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[4].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[4].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#72 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[4].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[4].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#73 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[5].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[5].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#74 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[5].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[5].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#75 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[5].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[5].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#76 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[6].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[6].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#77 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[6].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[6].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#78 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[6].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[6].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#79 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[7].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[7].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#80 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[7].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[7].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#81 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[7].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[7].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#82 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[0].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[0].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#83 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[0].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[0].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#84 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[0].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[0].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#85 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[1].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[1].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#86 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[1].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[1].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#87 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[1].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[1].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#88 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[2].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[2].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#89 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[2].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[2].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#90 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[2].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[2].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#91 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[3].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[3].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#92 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[3].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[3].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#93 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[3].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[3].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#94 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[4].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[4].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#95 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[4].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[4].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#96 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[4].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[4].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#97 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[5].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[5].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#98 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[5].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[5].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#99 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[5].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[5].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#100 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[6].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[6].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#101 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[6].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[6].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#102 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[6].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[6].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#103 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[7].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[7].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#104 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[7].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[7].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#105 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[7].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[7].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#106 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[0].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[0].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#107 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[0].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[0].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#108 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[0].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[0].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#109 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[1].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[1].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#110 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[1].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[1].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#111 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[1].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[1].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#112 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[2].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[2].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#113 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[2].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[2].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#114 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[2].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[2].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#115 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[3].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[3].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#116 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[3].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[3].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#117 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[3].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[3].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#118 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[4].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[4].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#119 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[4].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[4].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#120 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[4].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[4].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#121 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[5].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[5].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#122 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[5].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[5].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#123 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[5].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[5].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#124 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[6].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[6].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#125 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[6].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[6].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#126 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[6].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[6].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#127 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[7].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[7].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#128 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[7].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[7].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#129 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[7].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[7].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#130 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[0].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[0].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#131 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[0].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[0].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#132 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[0].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[0].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#133 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[1].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[1].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#134 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[1].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[1].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#135 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[1].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[1].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#136 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[2].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[2].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#137 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[2].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[2].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#138 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[2].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[2].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#139 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[3].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[3].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#140 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[3].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[3].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#141 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[3].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[3].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#142 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[4].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[4].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#143 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[4].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[4].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#144 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[4].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[4].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#145 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[5].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[5].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#146 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[5].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[5].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#147 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[5].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[5].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#148 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[6].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[6].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#149 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[6].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[6].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#150 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[6].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[6].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#151 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[7].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[7].pe/p_1_in/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#152 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[7].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[7].pe/p_1_in/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#153 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[7].pe/p_1_in input system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[7].pe/p_1_in/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#154 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/post/middle_reg input system_i/rs_accel_0/inst/core/post/middle_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#155 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/post/middle_reg input system_i/rs_accel_0/inst/core/post/middle_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#156 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/post/middle_reg input system_i/rs_accel_0/inst/core/post/middle_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#157 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/post/p00_reg input system_i/rs_accel_0/inst/core/post/p00_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#158 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/post/p00_reg input system_i/rs_accel_0/inst/core/post/p00_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#159 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/post/p10_reg input system_i/rs_accel_0/inst/core/post/p10_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#160 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/post/p10_reg input system_i/rs_accel_0/inst/core/post/p10_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#161 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/post/p11_reg input system_i/rs_accel_0/inst/core/post/p11_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#162 Warning
+Input pipelining  
+DSP system_i/rs_accel_0/inst/core/post/p11_reg input system_i/rs_accel_0/inst/core/post/p11_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPOP-1#1 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/a_scaled output system_i/rs_accel_0/inst/core/a_scaled/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#2 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/b_scaled output system_i/rs_accel_0/inst/core/b_scaled/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#3 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[0].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[0].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#4 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[1].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[1].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#5 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[2].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[2].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#6 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[3].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[3].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#7 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[4].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[4].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#8 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[5].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[5].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#9 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[6].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[6].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#10 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[7].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[7].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#11 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[0].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[0].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#12 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[1].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[1].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#13 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[2].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[2].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#14 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[3].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[3].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#15 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[4].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[4].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#16 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[5].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[5].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#17 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[6].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[6].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#18 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[7].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[7].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#19 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[0].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[0].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#20 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[1].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[1].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#21 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[2].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[2].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#22 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[3].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[3].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#23 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[4].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[4].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#24 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[5].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[5].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#25 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[6].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[6].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#26 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[7].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[7].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#27 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[0].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[0].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#28 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[1].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[1].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#29 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[2].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[2].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#30 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[3].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[3].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#31 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[4].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[4].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#32 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[5].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[5].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#33 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[6].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[6].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#34 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[7].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[7].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#35 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[0].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[0].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#36 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[1].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[1].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#37 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[2].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[2].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#38 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[3].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[3].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#39 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[4].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[4].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#40 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[5].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[5].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#41 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[6].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[6].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#42 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[7].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[7].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#43 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[0].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[0].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#44 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[1].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[1].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#45 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[2].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[2].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#46 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[3].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[3].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#47 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[4].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[4].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#48 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[5].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[5].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#49 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[6].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[6].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#50 Warning
+PREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[7].pe/p_1_in output system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[7].pe/p_1_in/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-2#1 Warning
+MREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/a_scaled multiplier stage system_i/rs_accel_0/inst/core/a_scaled/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#2 Warning
+MREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/add_pa_reg multiplier stage system_i/rs_accel_0/inst/core/add_pa_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#3 Warning
+MREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/add_pb_reg multiplier stage system_i/rs_accel_0/inst/core/add_pb_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#4 Warning
+MREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/b_scaled multiplier stage system_i/rs_accel_0/inst/core/b_scaled/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#5 Warning
+MREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/fc_hi_reg multiplier stage system_i/rs_accel_0/inst/core/fc_hi_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#6 Warning
+MREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/fc_lo_reg multiplier stage system_i/rs_accel_0/inst/core/fc_lo_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#7 Warning
+MREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/post/p00_reg multiplier stage system_i/rs_accel_0/inst/core/post/p00_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#8 Warning
+MREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/post/p10_reg multiplier stage system_i/rs_accel_0/inst/core/post/p10_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#9 Warning
+MREG Output pipelining  
+DSP system_i/rs_accel_0/inst/core/post/p11_reg multiplier stage system_i/rs_accel_0/inst/core/post/p11_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPREG-4#1 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[0].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#2 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[1].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#3 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[2].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#4 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[3].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#5 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[4].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#6 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[5].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#7 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[6].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#8 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[0].prows[0].pcols[7].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#9 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[0].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#10 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[1].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#11 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[2].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#12 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[3].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#13 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[4].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#14 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[5].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#15 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[6].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#16 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[0].prows[1].pcols[7].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#17 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[0].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#18 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[1].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#19 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[2].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#20 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[3].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#21 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[4].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#22 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[5].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#23 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[6].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#24 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[0].prows[2].pcols[7].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#25 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[0].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#26 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[1].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#27 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[2].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#28 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[3].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#29 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[4].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#30 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[5].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#31 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[6].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#32 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[1].prows[0].pcols[7].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#33 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[0].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#34 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[1].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#35 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[2].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#36 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[3].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#37 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[4].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#38 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[5].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#39 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[6].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#40 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[1].prows[1].pcols[7].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#41 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[0].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#42 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[1].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#43 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[2].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#44 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[3].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#45 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[4].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#46 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[5].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#47 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[6].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#48 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell system_i/rs_accel_0/inst/core/groups[1].prows[2].pcols[7].pe/p_1_in with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+PDCN-1569#1 Warning
+LUT equation term check  
+Used physical LUT pin 'A2' of cell system_i/memory/s01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin system_i/memory/s01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) in site SLICE_X51Y50 is not included in the LUT equation: 'O6=(A5)+((~A5)*(~A6)*A4)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#2 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell system_i/memory/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin system_i/memory/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) in site SLICE_X46Y48 is not included in the LUT equation: 'O6=(A1)+((~A1)*(~A2)*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#3 Warning
+LUT equation term check  
+Used physical LUT pin 'A5' of cell system_i/memory/s01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin system_i/memory/s01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) in site SLICE_X51Y59 is not included in the LUT equation: 'O6=(A2)+((~A2)*(~A4)*A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+REQP-1839#1 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0 has an input control pin system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0/WEBWE[0] (net: system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/wea[0]) which is driven by a register (system_i/memory/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#2 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0 has an input control pin system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0/WEBWE[1] (net: system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/wea[0]) which is driven by a register (system_i/memory/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#3 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0 has an input control pin system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0/WEBWE[2] (net: system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/wea[0]) which is driven by a register (system_i/memory/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#4 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0 has an input control pin system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0/WEBWE[3] (net: system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/wea[0]) which is driven by a register (system_i/memory/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#5 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0 has an input control pin system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0/WEBWE[4] (net: system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/wea[0]) which is driven by a register (system_i/memory/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#6 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0 has an input control pin system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0/WEBWE[5] (net: system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/wea[0]) which is driven by a register (system_i/memory/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#7 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0 has an input control pin system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0/WEBWE[6] (net: system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/wea[0]) which is driven by a register (system_i/memory/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#8 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0 has an input control pin system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0/WEBWE[7] (net: system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/wea[0]) which is driven by a register (system_i/memory/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#1 Warning
+RAMB18 async control check  
+The RAMB18E1 system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_1 has an input control pin system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_1/ENBWREN (net: system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/wea[0]) which is driven by a register (system_i/memory/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#2 Warning
+RAMB18 async control check  
+The RAMB18E1 system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_1 has an input control pin system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_1/WEBWE[0] (net: system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/wea[0]) which is driven by a register (system_i/memory/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#3 Warning
+RAMB18 async control check  
+The RAMB18E1 system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_1 has an input control pin system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_1/WEBWE[1] (net: system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/wea[0]) which is driven by a register (system_i/memory/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#4 Warning
+RAMB18 async control check  
+The RAMB18E1 system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_1 has an input control pin system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_1/WEBWE[2] (net: system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/wea[0]) which is driven by a register (system_i/memory/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+RTSTAT-10#1 Warning
+No routable loads  
+33 net(s) have no routable loads. The problem bus(es) and/or net(s) are system_i/memory/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i,
+system_i/memory/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/user_valid,
+system_i/memory/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i,
+system_i/memory/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb,
+system_i/memory/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i,
+system_i/memory/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0],
+system_i/memory/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0],
+system_i/memory/s01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i,
+system_i/memory/s01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/user_valid,
+system_i/memory/s01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i,
+system_i/memory/s01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb,
+system_i/memory/s01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i,
+system_i/memory/s01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0],
+system_i/memory/s01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0],
+system_i/memory/s01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i
+ (the first 15 of 21 listed).
+Related violations: <none>
+
+REQP-165#1 Advisory
+writefirst  
+Synchronous clocking is detected for BRAM (system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_1) in SDP mode with WRITE_FIRST write-mode. This is the preferred mode for best power characteristics, however it may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-165#2 Advisory
+writefirst  
+Synchronous clocking is detected for BRAM (system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_1) in SDP mode with WRITE_FIRST write-mode. This is the preferred mode for best power characteristics, however it may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-181#1 Advisory
+writefirst  
+Synchronous clocking is detected for BRAM (system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0) in SDP mode with WRITE_FIRST write-mode. This is the preferred mode for best power characteristics, however it may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-181#2 Advisory
+writefirst  
+Synchronous clocking is detected for BRAM (system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0) in SDP mode with WRITE_FIRST write-mode. This is the preferred mode for best power characteristics, however it may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+

@@ -1,0 +1,132 @@
+{
+  "inputs": 2262426,
+  "outputs": 114762,
+  "packets": 581,
+  "macs": 12500992,
+  "pe_activation_writes": 5841920,
+  "pe_weight_writes": 849408,
+  "tensors": {
+    "a0": {
+      "start": 0,
+      "count": 16384,
+      "shape": [
+        16,
+        32,
+        32
+      ]
+    },
+    "block1.y1": {
+      "start": 16384,
+      "count": 16384,
+      "shape": [
+        16,
+        32,
+        32
+      ]
+    },
+    "block1.y2": {
+      "start": 32768,
+      "count": 16384,
+      "shape": [
+        16,
+        32,
+        32
+      ]
+    },
+    "a1": {
+      "start": 49152,
+      "count": 16384,
+      "shape": [
+        16,
+        32,
+        32
+      ]
+    },
+    "block2.y1": {
+      "start": 65536,
+      "count": 8192,
+      "shape": [
+        32,
+        16,
+        16
+      ]
+    },
+    "block2.y2": {
+      "start": 73728,
+      "count": 8192,
+      "shape": [
+        32,
+        16,
+        16
+      ]
+    },
+    "block2.s": {
+      "start": 81920,
+      "count": 8192,
+      "shape": [
+        32,
+        16,
+        16
+      ]
+    },
+    "a2": {
+      "start": 90112,
+      "count": 8192,
+      "shape": [
+        32,
+        16,
+        16
+      ]
+    },
+    "block3.y1": {
+      "start": 98304,
+      "count": 4096,
+      "shape": [
+        64,
+        8,
+        8
+      ]
+    },
+    "block3.y2": {
+      "start": 102400,
+      "count": 4096,
+      "shape": [
+        64,
+        8,
+        8
+      ]
+    },
+    "block3.s": {
+      "start": 106496,
+      "count": 4096,
+      "shape": [
+        64,
+        8,
+        8
+      ]
+    },
+    "a3": {
+      "start": 110592,
+      "count": 4096,
+      "shape": [
+        64,
+        8,
+        8
+      ]
+    },
+    "pool": {
+      "start": 114688,
+      "count": 64,
+      "shape": [
+        64
+      ]
+    },
+    "logits": {
+      "start": 114752,
+      "count": 10,
+      "shape": [
+        10
+      ]
+    }
+  }
+}

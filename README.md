@@ -6,6 +6,45 @@ Reconfigurable Accelerator for Deep Convolutional Neural Networks"* (JSSC 2017).
 The target network is ResNet-8 on CIFAR-10, the MLPerf Tiny image-classification model,
 in int8.
 
+## Implemented hardware status
+
+The repository now includes a synthesizable 6x8 RS array, stationary row buffers,
+diagonal activation and horizontal weight multicast, registered row-sum links,
+INT8 convolution/requantization, residual add, sum pooling and INT32 classifier.
+A banked BRAM ingress FIFO, AXI4-Lite control and AXI-stream interface connect
+to PS7/AXI DMA in a reproducible PYNQ-Z2 block design. The PYNQ host compiles
+tiles and checks every exported intermediate tensor.
+
+XSim executes the full ResNet-8 graph with deterministic synthetic weights,
+feeding actual RTL outputs into later layers. All 114,762 intermediate/final
+values match the integer reference exactly. This is arithmetic verification;
+trained accuracy and board execution require supplied weights/data and a board.
+Vivado 2026.1 generated a full PS7/DMA bitstream with timing met at 100 MHz:
+9,014 LUTs, 6,615 FFs, 59 DSPs, four BRAM36-equivalent tiles, setup slack
++0.261 ns and hold slack +0.024 ns. The matching files are
+`build/board-final/rs_accel.bit` and `.hwh`. No board programming was performed;
+retained build/preset warnings and deployment checks are detailed in the report.
+
+See [architecture and packet ABI](docs/ARCHITECTURE.md),
+[build and board procedure](docs/BOARD_VALIDATION.md),
+[live progress](docs/PROGRESS.md), and [validation report](docs/VALIDATION_REPORT.md).
+The original 12x14 mapper estimates below describe a different analytical
+schedule and must not be used as measured RTL or board throughput.
+
+```sh
+python tests/test_nn_numpy.py
+python tests/test_rs.py
+python -m unittest discover -s tests -p test_protocol.py -v
+python scripts/run_rtl.py --suite pe
+python scripts/run_rtl.py --suite control
+python scripts/run_rtl.py --suite directed
+python scripts/run_rtl.py --suite network
+```
+
+Verification requires NumPy and Vivado/XSim; the runner accepts `--vivado PATH`.
+`--cols 4`, `--cols 8` and `--cols 12` evaluate actual parameterized RTL schedules.
+Training requirements remain separate in `model/requirements.txt`.
+
 ## The model
 
 `model/` trains ResNet-8 in PyTorch and turns it into the integer model the

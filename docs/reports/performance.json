@@ -1,0 +1,38 @@
+[
+  {
+    "columns": 4,
+    "pes": 24,
+    "input_words": 2262426,
+    "output_words": 114762,
+    "packets": 581,
+    "busy_cycles": 4511441,
+    "wall_cycles": 4512027,
+    "stream_payload_bytes": 9508752,
+    "simulated_ms_at_100mhz": 45.12027,
+    "pe_peak_utilization": 0.11544138957206299
+  },
+  {
+    "columns": 8,
+    "pes": 48,
+    "input_words": 1994586,
+    "output_words": 114762,
+    "packets": 293,
+    "busy_cycles": 3802033,
+    "wall_cycles": 3802331,
+    "stream_payload_bytes": 8437392,
+    "simulated_ms_at_100mhz": 38.02331,
+    "pe_peak_utilization": 0.0684941246128581
+  },
+  {
+    "columns": 12,
+    "pes": 72,
+    "input_words": 1970122,
+    "output_words": 114762,
+    "packets": 269,
+    "busy_cycles": 3736212,
+    "wall_cycles": 3736486,
+    "stream_payload_bytes": 8339536,
+    "simulated_ms_at_100mhz": 37.36486,
+    "pe_peak_utilization": 0.046467426584467036
+  }
+]
