@@ -6,6 +6,32 @@ Reconfigurable Accelerator for Deep Convolutional Neural Networks"* (JSSC 2017).
 The target network is ResNet-8 on CIFAR-10, the MLPerf Tiny image-classification model,
 in int8.
 
+## Open the complete project in Vivado
+
+Open **`rs-cnn-accel.xpr` in this repository's root folder** using Vivado 2025.2.
+It contains the PS7, AXI DMA, control/memory interconnects and RS accelerator
+block design, with `system_wrapper` as the top module.
+
+On the current PC, the exact file is:
+
+```text
+C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\rs-cnn-accel.xpr
+```
+
+1. Start Vivado 2025.2 and choose **Open Project**; select that `.xpr` file.
+2. Choose **IP Integrator > Open Block Design**, then open `system` to see the
+   complete PS7/DMA/accelerator diagram.
+3. Choose **Open Implemented Design** to inspect the routed design and timing
+   from the completed local build.
+
+The project inputs are committed: `hw/` contains RTL and the top wrapper, and
+`rs-cnn-accel.srcs/` contains the block design and IP configuration. Generated
+run results are present in the current folder's `rs-cnn-accel.runs/`; they are
+excluded from Git. On a fresh source clone, generate output products for
+`system.bd`, then run synthesis/implementation to regenerate those results.
+For a copy with the existing results included, use the separate
+`build/rs-cnn-accel-vivado-complete.zip` Vivado archive.
+
 ## Quick start: run on the validated board
 
 The tested deployment is already on the PYNQ-Z2 at `192.168.2.99`, in

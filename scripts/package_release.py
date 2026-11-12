@@ -19,7 +19,7 @@ def main():
     if not out.is_relative_to(ROOT/'build'):
         ap.error('--out must remain inside repository build/')
     files = {}
-    for folder in ('hw','sim','host','model','mapper','scripts','tests','docs'):
+    for folder in ('hw','sim','host','model','mapper','scripts','tests','docs','rs-cnn-accel.srcs'):
         for path in (ROOT/folder).rglob('*'):
             if path.is_file() and '__pycache__' not in path.parts and path.suffix not in ('.pyc','.npz'):
                 files[path.relative_to(ROOT).as_posix()] = path

@@ -1,5 +1,21 @@
 # Live implementation status
 
+## Vivado GUI project delivered (2026-11-12)
+
+- Replaced the old empty root `rs-cnn-accel.xpr` with the complete 2025.2
+  PS7/DMA/accelerator project. Original preserved at
+  `build/original-empty-rs-cnn-accel.xpr` at the user's request to fix the project.
+- Root project references `hw/` RTL, the committed `hw/system_wrapper.v`, and
+  `rs-cnn-accel.srcs/` block-design/IP inputs. Existing completed synthesis and
+  implementation runs were copied into `rs-cnn-accel.runs/`.
+- Vivado opened the block design and the routed implementation: seven top-level
+  BD cells, 22,238 routed cells, setup/hold slack +0.152/+0.012 ns.
+- A source-only copy without generated output/run folders also opens and
+  validates the complete block design in Vivado 2025.2.
+- Complete Vivado archive with run results:
+  `build/rs-cnn-accel-vivado-complete.zip`. README now starts with GUI opening
+  instructions. The portable deployment package also includes project inputs.
+
 ## Actual board deployment (2026-11-12)
 
 - User authorized programming and supplied access to PYNQ-Z2 at 192.168.2.99.

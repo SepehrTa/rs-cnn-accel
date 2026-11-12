@@ -1,0 +1,9 @@
+COMMAND: Vivado 2025.2 batch open root project, refresh module reference, validate BD, open impl_1, archive_project.
+VERIFIED_TOP system_wrapper
+VERIFIED_BD_CELLS /axi_dma_0 /control /locked /memory /ps7 /reset /rs_accel_0
+VERIFIED_ROUTED_CELLS 22238
+VERIFIED_SETUP_SLACK 0.152
+VERIFIED_HOLD_SLACK 0.012
+INFO: [Coretcl 2-1215] Project archived (C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/rs-cnn-accel-vivado-complete.zip)
+COMMAND: Vivado 2025.2 open independent source-only project copy and validate BD.
+PASS_SOURCE_ONLY_PROJECT TOP=system_wrapper CELLS=/axi_dma_0 /control /locked /memory /ps7 /reset /rs_accel_0
