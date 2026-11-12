@@ -57,7 +57,8 @@ def main():
                   f"  data {'exact' if ok_data else 'WRONG'}"
                   + (f", counts differ: {bad}" if bad else ", counts match"))
     print("\nALL PASS" if failures == 0 else f"\n{failures} FAILED")
+    return bool(failures)
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

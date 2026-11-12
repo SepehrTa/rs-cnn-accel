@@ -82,6 +82,8 @@ def forward_float(layers, graph, x):
 def quantize_multiplier(m):
     """Real multipliers m > 0 -> (M, S): m ~= M / 2^31 / 2^S, M in [2^30, 2^31)."""
     m = np.atleast_1d(np.asarray(m, np.float64))
+    if np.any(~np.isfinite(m)) or np.any(m <= 0):
+        raise ValueError("multipliers must be positive and finite")
     s = np.ceil(-np.log2(m)).astype(np.int64) - 1         # puts m * 2^s into [0.5, 1)
     frac = m * np.power(2.0, s)
     M = np.round(frac * 2.0 ** 31).astype(np.int64)
@@ -95,7 +97,20 @@ def requant(acc, M, S):
     """Rounding fixed-point multiply: (acc * M + 2^(30+S)) >> (31+S), M and S per channel.
     One multiply, one add, one arithmetic shift, a single rounding step (valid for S > -31)."""
     sh = 31 + np.asarray(S, np.int64)
+    if np.any((sh < 1) | (sh > 62)):
+        raise ValueError("requant shift must be in 1..62")
+    checked_int32(acc, "requant accumulator")
+    if np.any((np.asarray(M) < 0) | (np.asarray(M) >= (1 << 31))):
+        raise ValueError("requant multiplier must fit nonnegative signed INT32")
     return (acc.astype(np.int64) * M + np.left_shift(np.int64(1), sh - 1)) >> sh
+
+
+def checked_int32(value, name):
+    """Reject silent wraparound in exports / the intended INT32 datapath."""
+    a = np.asarray(value)
+    if np.any(~np.isfinite(a)) or np.any(a < -(1 << 31)) or np.any(a > (1 << 31)-1):
+        raise ValueError(f"{name}: signed INT32 overflow")
+    return a.astype(np.int32)
 
 
 def calibrate(layers, graph, x, pct=99.99):
@@ -121,7 +136,7 @@ def quantize(layers, graph, scales):
             wq = np.clip(np.round(w / s_w[:, None, None, None]), -127, 127).astype(np.int8)
             bq = np.round(b / (s_in * s_w)).astype(np.int64)
             M, S = quantize_multiplier(s_in * s_w / s_out)
-            q[n] = dict(w=wq, b=bq.astype(np.int32), M=M, S=S, s_w=s_w)
+            q[n] = dict(w=wq, b=checked_int32(bq, n + " bias"), M=M, S=S, s_w=s_w)
         elif L["op"] == "add":
             ra = scales[L["a"]] / scales[L["dst"]]
             rb = scales[L["b"]] / scales[L["dst"]]
@@ -136,7 +151,7 @@ def quantize(layers, graph, scales):
             area = 64.0                                    # 8 x 8 positions summed by gap
             s_w = max(np.abs(w).max(), 1e-12) / 127
             wq = np.clip(np.round(w / s_w), -127, 127).astype(np.int8)
-            bq = np.round(b / (s_w * scales[_gap_src(graph)] / area)).astype(np.int32)
+            bq = checked_int32(np.round(b / (s_w * scales[_gap_src(graph)] / area)), n + " bias")
             q[n] = dict(w=wq, b=bq, s_w=s_w)
     return q
 
@@ -155,6 +170,7 @@ def forward_int(q, graph, x_q):
             p = q[n]
             acc = conv2d(t[L["src"]], p["w"], L["stride"], L["pad"])
             acc = np.rint(acc).astype(np.int64) + p["b"].astype(np.int64)[None, :, None, None]
+            checked_int32(acc, n + " accumulator")
             y = requant(acc, p["M"][None, :, None, None], p["S"][None, :, None, None])
             t[L["dst"]] = np.clip(y, 0 if L["relu"] else -128, 127)
         elif L["op"] == "add":
@@ -167,4 +183,5 @@ def forward_int(q, graph, x_q):
         elif L["op"] == "fc":
             p = q[n]
             t[L["dst"]] = t[L["src"]] @ p["w"].astype(np.int64).T + p["b"].astype(np.int64)
+            checked_int32(t[L["dst"]], n + " accumulator")
     return t

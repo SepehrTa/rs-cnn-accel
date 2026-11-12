@@ -25,3 +25,8 @@ model/data/
 
 # board copies of build outputs
 pynq/
+
+# Reproducible generated verification/build artifacts
+build/
+clockInfo.txt
+NA/

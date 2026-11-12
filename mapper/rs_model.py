@@ -89,9 +89,17 @@ def layers_from_graph(graph, size=32):
     return out
 
 
+def global_buffer_bytes(layer, hw):
+    """Resident ifmap + INT32 ofmap assumed by this analytical traffic model."""
+    return (layer.C * layer.H * layer.H * hw.act_bytes
+            + layer.M * layer.E * layer.E * hw.psum_bytes)
+
+
 def legal(layer, m, hw):
     S = layer.R
-    return (layer.R <= hw.rows and 1 <= m.e <= min(layer.E, hw.cols)
+    return (min(m.e, m.p, m.q, m.r, m.t) >= 1
+            and global_buffer_bytes(layer, hw) <= hw.glb_bytes
+            and layer.R <= hw.rows and 1 <= m.e <= min(layer.E, hw.cols)
             and m.r * m.t <= (hw.rows // layer.R) * (hw.cols // m.e)
             and m.q * S <= hw.ifmap_spad and m.p * m.q * S <= hw.filt_spad and m.p <= hw.psum_spad
             and m.p * m.t <= ceil(layer.M / 1) and m.q * m.r <= layer.C)
@@ -111,6 +119,8 @@ def passes(layer, m):
 
 def count(layer, m, hw=HwConfig()):
     """Accesses per memory level, cycles and utilization for one mapping (batch size 1)."""
+    if not legal(layer, m, hw):
+        raise ValueError("illegal mapping or insufficient resident global-buffer capacity")
     R, S, F, Wp = layer.R, layer.R, layer.E, layer.Hp
     c = dict(mac=0, spad=0, array=0, glb=0, dram=0, cycles=0, passes=0,
              glb_filter=0, glb_ifmap=0, glb_psum=0, noc_filter=0, noc_ifmap=0)
@@ -144,8 +154,7 @@ def count(layer, m, hw=HwConfig()):
     c["dram_ifmap"] = layer.C * layer.H * layer.H
     c["dram_ofmap"] = layer.M * layer.E * layer.E
     c["dram"] = c["dram_weight"] + c["dram_ifmap"] + c["dram_ofmap"]
-    c["glb_need"] = (layer.C * layer.H * layer.H * hw.act_bytes
-                     + layer.M * layer.E * layer.E * hw.psum_bytes)
+    c["glb_need"] = global_buffer_bytes(layer, hw)
     c["cost"] = sum(COST[k] * c[k] for k in COST)
     c["util"] = c["mac"] / (c["cycles"] * hw.pes)
     return c
@@ -153,6 +162,8 @@ def count(layer, m, hw=HwConfig()):
 
 def best_mapping(layer, hw=HwConfig(), objective="cost"):
     """Search every legal mapping; return (mapping, counts) with the lowest objective."""
+    if global_buffer_bytes(layer, hw) > hw.glb_bytes:
+        raise ValueError("resident tensors exceed analytical model global-buffer capacity")
     best = None
     for e in range(1, min(layer.E, hw.cols) + 1):
         for q in range(1, layer.C + 1):
@@ -171,4 +182,6 @@ def best_mapping(layer, hw=HwConfig(), objective="cost"):
                         key = (c[objective], c["cycles"]) if objective == "cost" else (c["cycles"], c["cost"])
                         if best is None or key < best[0]:
                             best = (key, m, c)
+    if best is None:
+        raise ValueError("no legal mapping for layer and hardware capacities")
     return best[1], best[2]

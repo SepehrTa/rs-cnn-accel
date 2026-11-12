@@ -118,3 +118,4 @@ err = np.abs(li * scale - lf).max() / np.abs(lf).max()
 check(f"int8 model tracks float (max logit error {100 * err:.1f}% of range)", err < 0.08)
 
 print("\nALL PASS" if failures == 0 else f"\n{failures} FAILED")
+sys.exit(bool(failures))

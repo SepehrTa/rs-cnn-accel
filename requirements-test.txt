@@ -1,0 +1,2 @@
+# Tested with Python 3.13.14 and NumPy 2.4.3. No PyTorch needed for RTL vectors.
+numpy==2.4.3
