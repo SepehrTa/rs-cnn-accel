@@ -11,17 +11,38 @@
 *.str
 *.backup.*
 vivado_pid*.zip
+*.dcp
+*.bit
+*.hwh
+*.xsa
+*.wdb
+*.vcd
+*.fst
+xsim.dir/
 dfx_runtime.txt
 
 # Python
 __pycache__/
 *.py[cod]
 .venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
 
 # datasets and trained models (regenerate with model/train.py and model/quantize.py)
 data/
 model/data/
 *.npz
+*.pt
+*.pth
+*.onnx
+*.h5
+*.hdf5
+*.tflite
 
 # board copies of build outputs
 pynq/
@@ -30,3 +51,12 @@ pynq/
 build/
 clockInfo.txt
 NA/
+
+# Local credentials; keep shareable environment templates.
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Keep AGENTS.md, the root .xpr, RTL, Tcl/XDC, host/model code, requirements,
+# documentation and docs/reports/ in Git. Build outputs can be regenerated.
