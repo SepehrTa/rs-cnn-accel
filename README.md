@@ -6,6 +6,98 @@ Reconfigurable Accelerator for Deep Convolutional Neural Networks"* (JSSC 2017).
 The target network is ResNet-8 on CIFAR-10, the MLPerf Tiny image-classification model,
 in int8.
 
+## Quick start: run on the validated board
+
+The tested deployment is already on the PYNQ-Z2 at `192.168.2.99`, in
+`/home/xilinx/rs-cnn-accel-20261112`. From your PC, connect with:
+
+```sh
+ssh xilinx@192.168.2.99
+```
+
+Then run these commands **on the board**:
+
+```sh
+cd /home/xilinx/rs-cnn-accel-20261112
+
+# Run one embedded trained test image (indices 0, 1, 2 or 3).
+sudo env XILINX_XRT=/usr /usr/local/share/pynq-venv/bin/python3 host/accelerator.py rs_accel.bit resnet8_int8.npz --image 0
+
+# Check all four images three times and save measured inference results.
+sudo env XILINX_XRT=/usr /usr/local/share/pynq-venv/bin/python3 scripts/benchmark_board.py rs_accel.bit resnet8_int8.npz --repeat 3 --report board-inference-trained.json
+```
+
+These commands load the overlay into the FPGA. The first should print
+`PASS every tensor; image 0 class 3`, followed by measured time/counters.
+The benchmark prints twelve `PASS INFERENCE` lines, then
+`PASS BOARD INFERENCE board-inference-trained.json`. Expect about 2.4 seconds
+per inference, plus model checking and overlay loading at startup.
+The fourth example image is misclassified by the trained model; hardware still
+passes because its tensors/logits exactly match the integer reference.
+
+The tested board image requires its PYNQ virtual environment and
+`XILINX_XRT=/usr`, as shown. PyTorch and Vivado are not needed on the board.
+
+## Restore on another PC or board
+
+Clone the branch containing the actual-board work:
+
+```sh
+git clone --branch codex/resume-validation https://github.com/SepehrTa/rs-cnn-accel.git
+cd rs-cnn-accel
+```
+
+If you already have this repository, preserve any local edits, then use:
+
+```sh
+git fetch origin
+git switch codex/resume-validation
+git pull --ff-only
+```
+
+Git contains source and validation reports. Generated bitstreams, HWH files,
+trained NPZ archives, datasets and `build/` are excluded. A source clone alone
+does not contain the deployment files.
+
+For immediate deployment, use the separately generated
+`rs-cnn-accel-pynq-z2-validated.zip` package. It contains source, reports,
+`rs_accel.bit`, `rs_accel.hwh`, both trained NPZ archives and a SHA256 manifest.
+On the development PC its path is
+`build/rs-cnn-accel-pynq-z2-validated.zip`; it is not included in the Git clone.
+Copy this ZIP to the new board, extract it into a dedicated directory and run
+the board commands above from that directory. Keep the supplied `.bit` and
+`.hwh` together with the same basename.
+
+To regenerate deployment files from source on Windows, install Vivado with
+Zynq-7000 support and the Python dependencies in `model/requirements.txt`.
+Training uses PyTorch/torchvision; the tested GPU was an RTX 4070. From the
+repository root in PowerShell:
+
+```powershell
+New-Item -ItemType Directory -Path build -Force | Out-Null
+python -m pip install -r model/requirements.txt
+python -u model/train.py --data build/data --out build/resnet8_float.npz --workers 0
+python -u model/quantize.py --float build/resnet8_float.npz --data build/data --out build/resnet8_int8.npz --vectors 4
+python scripts/validate_export.py build/resnet8_int8.npz --float build/resnet8_float.npz --data build/data --report build/export-validation.json
+
+python scripts/fetch_ps_preset.py
+& 'C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat' -mode batch -source scripts/build_board.tcl -log build/board-resume-v2.log -journal build/board-resume-v2.jou -tclargs bitstream board-resume-v2
+
+python scripts/package_release.py --board build/board-resume-v2 --model build/resnet8_int8.npz --float build/resnet8_float.npz
+```
+
+Adjust the Vivado path to your installation. The training step downloads
+CIFAR-10 when absent and runs 60 epochs. The final command creates and checks
+the portable deployment ZIP. For RTL verification with the exported weights:
+
+```powershell
+python scripts/run_rtl.py --vivado C:/AMDDesignTools/2025.2/Vivado --suite network --archive build/resnet8_int8.npz --image 0 --output build/sim/trained-image0
+```
+
+Repeat with indices 1, 2 and 3 and distinct output directories to check all
+exported images. See [actual board results](docs/BOARD_RESULTS.md) for stress
+tests, complete measurements and known limits.
+
 ## Implemented hardware status
 
 The repository now includes a synthesizable 6x8 RS array, stationary row buffers,
