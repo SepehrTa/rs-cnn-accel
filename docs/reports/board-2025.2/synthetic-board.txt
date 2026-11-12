@@ -1,0 +1,12 @@
+SSH host key SHA256:TB0FfGjfMzgZUv/reJgTpeq/AM68sMCpGC5xm6Pit7o
+loaded rs_accel.bit, FCLK0 = 100.0 MHz
+PASS BOARD {"suite": "directed", "exact_values": 10524, "commands": 94, "host_seconds": 0.9345050510019064, "busy_cycles": 153081, "axis_payload_bytes": 179700, "dma_mm2s_status": 4098, "dma_s2mm_status": 4098, "repeat": 0}
+PASS BOARD {"suite": "network", "exact_values": 114762, "commands": 293, "host_seconds": 22.936929799994687, "busy_cycles": 3661064, "axis_payload_bytes": 8437392, "dma_mm2s_status": 4098, "dma_s2mm_status": 4098, "repeat": 0}
+PASS BOARD {"suite": "network-image1", "exact_values": 114762, "commands": 293, "host_seconds": 22.21620241602068, "busy_cycles": 3661000, "axis_payload_bytes": 8437392, "dma_mm2s_status": 4098, "dma_s2mm_status": 4098, "repeat": 0}
+PASS BOARD {"suite": "directed", "exact_values": 10524, "commands": 94, "host_seconds": 0.8956342570018023, "busy_cycles": 153082, "axis_payload_bytes": 179700, "dma_mm2s_status": 4098, "dma_s2mm_status": 4098, "repeat": 1}
+PASS BOARD {"suite": "network", "exact_values": 114762, "commands": 293, "host_seconds": 22.31256125299842, "busy_cycles": 3660973, "axis_payload_bytes": 8437392, "dma_mm2s_status": 4098, "dma_s2mm_status": 4098, "repeat": 1}
+PASS BOARD {"suite": "network-image1", "exact_values": 114762, "commands": 293, "host_seconds": 21.984899555012817, "busy_cycles": 3660992, "axis_payload_bytes": 8437392, "dma_mm2s_status": 4098, "dma_s2mm_status": 4098, "repeat": 1}
+PASS BOARD {"suite": "directed", "exact_values": 10524, "commands": 94, "host_seconds": 0.962576835998334, "busy_cycles": 153062, "axis_payload_bytes": 179700, "dma_mm2s_status": 4098, "dma_s2mm_status": 4098, "repeat": 2}
+PASS BOARD {"suite": "network", "exact_values": 114762, "commands": 293, "host_seconds": 22.294711302005453, "busy_cycles": 3660990, "axis_payload_bytes": 8437392, "dma_mm2s_status": 4098, "dma_s2mm_status": 4098, "repeat": 2}
+PASS BOARD {"suite": "network-image1", "exact_values": 114762, "commands": 293, "host_seconds": 21.92114614599268, "busy_cycles": 3661032, "axis_payload_bytes": 8437392, "dma_mm2s_status": 4098, "dma_s2mm_status": 4098, "repeat": 2}
+PASS BOARD VALIDATION board-synthetic.json

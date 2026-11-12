@@ -1,0 +1,4 @@
+SSH host key SHA256:TB0FfGjfMzgZUv/reJgTpeq/AM68sMCpGC5xm6Pit7o
+loaded rs_accel.bit, FCLK0 = 100.0 MHz
+PASS every tensor; image 1 class 9 host seconds 2.4601123039901722
+busy cycles 3661017 commands 293 stream bytes 8437392

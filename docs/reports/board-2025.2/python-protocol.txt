@@ -1,0 +1,13 @@
+test_all_graph_operations (test_protocol.ProtocolTests.test_all_graph_operations) ... ok
+test_analytical_capacity_is_enforced (test_protocol.ProtocolTests.test_analytical_capacity_is_enforced) ... ok
+test_dma_transport_order_and_cleanup (test_protocol.ProtocolTests.test_dma_transport_order_and_cleanup) ... ok
+test_golden_rejects_invalid_ranges (test_protocol.ProtocolTests.test_golden_rejects_invalid_ranges) ... ok
+test_mapping_positivity (test_protocol.ProtocolTests.test_mapping_positivity) ... ok
+test_negative_ties (test_protocol.ProtocolTests.test_negative_ties) ... ok
+test_reject_bad_shift (test_protocol.ProtocolTests.test_reject_bad_shift) ... ok
+test_reject_overflow (test_protocol.ProtocolTests.test_reject_overflow) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.152s
+
+OK

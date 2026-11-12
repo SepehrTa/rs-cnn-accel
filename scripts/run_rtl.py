@@ -4,6 +4,7 @@ python scripts/run_rtl.py --vivado C:/vivado/2026.1/Vivado --suite directed
 python scripts/run_rtl.py --vivado C:/vivado/2026.1/Vivado --suite network
 """
 import argparse
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -17,7 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT/'model'), str(ROOT/'host')]
 from graph import resnet8_graph
 from nn_numpy import conv2d, forward_int, requant
-from protocol import conv_packets, add_packet, pool_packet, fc_packet, load_model
+from protocol import conv_packets, add_packet, pool_packet, fc_packet, load_vector
 
 
 class Vectors:
@@ -32,6 +33,7 @@ class Vectors:
         self.packets = 0
         self.macs = self.act_writes = self.weight_writes = 0
         self.tensors = {}
+        self.source = {}
 
     def emit(self, packet, expected, refs=None):
         h=packet[:16].astype(np.int64)
@@ -61,7 +63,7 @@ class Vectors:
         (self.folder/'manifest.json').write_text(json.dumps(dict(
             inputs=self.inputs, outputs=self.outputs, packets=self.packets,
             macs=self.macs,pe_activation_writes=self.act_writes,
-            pe_weight_writes=self.weight_writes,tensors=self.tensors), indent=2))
+            pe_weight_writes=self.weight_writes,tensors=self.tensors,source=self.source), indent=2))
 
 
 def conv(v, x, p, layer, ref, refs=None):
@@ -128,12 +130,12 @@ def directed(v):
     v.emit(fc_packet(pooled,p),pooled@p['w'].T+p['b'],(np.arange(16,23),poolrefs))
 
 
-def network(v, archive=None):
+def network(v, archive=None, image=0):
     rng=np.random.default_rng(8)
+    v.source = dict(kind='network',image=image,synthetic=not bool(archive),
+                    archive_sha256=hashlib.sha256(Path(archive).read_bytes()).hexdigest() if archive else None)
     if archive:
-        q,graph=load_model(archive)
-        with np.load(archive,allow_pickle=False) as z:
-            x=z['vec.input'][:1].astype(np.int64)
+        q,graph,t=load_vector(archive,image)
     else:
         graph=resnet8_graph()
         x=rng.integers(-128,128,(1,3,32,32),dtype=np.int64)
@@ -145,13 +147,10 @@ def network(v, archive=None):
                     M=rng.integers(2**30,2**31,l['cout']),S=np.full(l['cout'],8))
             elif l['op']=='add': q[l['name']]=dict(Ma=1610612736,Mb=1073741824,S=0)
             elif l['op']=='fc': q[l['name']]=dict(w=rng.integers(-64,65,(10,64),dtype=np.int8),b=rng.integers(-10000,10001,10,dtype=np.int32))
-    t=forward_int(q,graph,x)
-    if archive:
-        with np.load(archive,allow_pickle=False) as z:
-            for name,value in t.items():
-                if not np.array_equal(value,z[f'vec.{name}'][:1]):
-                    raise AssertionError(f'archive tensor vec.{name} differs from golden recomputation')
-    else:
+    if not archive:
+        if image != 0:
+            raise ValueError('nonzero image selection requires --archive')
+        t=forward_int(q,graph,x)
         export={'graph':np.array(json.dumps(graph)),'vec.labels':np.array([-1]),'test_logits':t['logits'].astype(np.int32)}
         export.update({f'{name}.{key}':np.asarray(value) for name,p in q.items() for key,value in p.items()})
         export.update({f'vec.{name}':value.astype(np.int32) for name,value in t.items()})
@@ -192,15 +191,29 @@ def main():
     ap.add_argument('--vivado',default=os.environ.get('XILINX_VIVADO','C:/vivado/2026.1/Vivado'))
     ap.add_argument('--suite',choices=['directed','network','control','pe'],default='directed')
     ap.add_argument('--archive',help='existing quantize.py NPZ; network suite only')
+    ap.add_argument('--image',type=int,default=0,help='zero-based embedded archive image (network suite only)')
+    ap.add_argument('--output',type=Path,help='separate generated output folder, inside repository build/')
     ap.add_argument('--cols',type=int,default=8,choices=range(1,33))
     args=ap.parse_args()
+    if args.archive and args.suite != 'network':
+        ap.error('--archive requires --suite network')
+    if args.image < 0 or (args.image != 0 and (not args.archive or args.suite != 'network')):
+        ap.error('--image must be nonnegative; nonzero selection requires --suite network --archive')
     folder=ROOT/'build'/'sim'/(args.suite if args.cols==8 else f'{args.suite}-cols{args.cols}')
+    if args.image:
+        folder=folder.with_name(f'{folder.name}-image{args.image}')
+    if args.output:
+        folder=(ROOT/args.output).resolve()
+        if not folder.is_relative_to(ROOT/'build'):
+            ap.error('--output must stay inside the repository build/ folder')
     folder.mkdir(parents=True,exist_ok=True)
     functional=args.suite in ('directed','network')
     if functional:
         v=Vectors(folder,args.cols)
-        (directed(v) if args.suite=='directed' else network(v,args.archive))
-        v.close()
+        try:
+            (directed(v) if args.suite=='directed' else network(v,args.archive,args.image))
+        finally:
+            v.close()
     bin=Path(args.vivado)/'bin'
     suffix='.bat' if os.name=='nt' else ''
     tb={'control':'tb_control','pe':'tb_pe'}.get(args.suite,'tb_stream')
@@ -212,7 +225,7 @@ def main():
         extra=[wrapper]
         top='tb_config'
     run([bin/f'xvlog{suffix}','--sv',*sorted((ROOT/'hw').glob('*.sv')),ROOT/'sim'/f'{tb}.sv',*extra],folder)
-    run([bin/f'xelab{suffix}',top,'-s',f'{tb}_snapshot'],folder)
+    run([bin/f'xelab{suffix}',top,'--timescale','1ns/1ps','-s',f'{tb}_snapshot'],folder)
     run([bin/f'xsim{suffix}',f'{tb}_snapshot','-runall'],folder)
     output=(folder/'xsim.stdout.txt').read_text()
     marker={'control':'PASS CONTROL','pe':'PASS PE'}.get(args.suite,'PASS RTL')

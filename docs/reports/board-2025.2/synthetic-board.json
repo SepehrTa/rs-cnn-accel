@@ -1,0 +1,114 @@
+{
+  "platform": "Linux-6.6.10-xilinx-v2024.1-g3c0eca68c652-armv7l-with-glibc2.35",
+  "python": "3.10.4 (main, Apr  2 2022, 09:04:19) [GCC 11.2.0]",
+  "numpy": "1.21.5",
+  "pynq": "3.1.1",
+  "bitstream_sha256": "83d9580b8638b255a73062ea06a4df561e5520bcec2a0004368aa1c9f817b46b",
+  "hwh_sha256": "8a9150ce45ef9eecf2feb1ceca76c3a533c4424facb22c4fea4480f5daddf14a",
+  "temperature_start_c": 43.679473876820005,
+  "runs": [
+    {
+      "suite": "directed",
+      "exact_values": 10524,
+      "commands": 94,
+      "host_seconds": 0.9345050510019064,
+      "busy_cycles": 153081,
+      "axis_payload_bytes": 179700,
+      "dma_mm2s_status": 4098,
+      "dma_s2mm_status": 4098,
+      "repeat": 0
+    },
+    {
+      "suite": "network",
+      "exact_values": 114762,
+      "commands": 293,
+      "host_seconds": 22.936929799994687,
+      "busy_cycles": 3661064,
+      "axis_payload_bytes": 8437392,
+      "dma_mm2s_status": 4098,
+      "dma_s2mm_status": 4098,
+      "repeat": 0
+    },
+    {
+      "suite": "network-image1",
+      "exact_values": 114762,
+      "commands": 293,
+      "host_seconds": 22.21620241602068,
+      "busy_cycles": 3661000,
+      "axis_payload_bytes": 8437392,
+      "dma_mm2s_status": 4098,
+      "dma_s2mm_status": 4098,
+      "repeat": 0
+    },
+    {
+      "suite": "directed",
+      "exact_values": 10524,
+      "commands": 94,
+      "host_seconds": 0.8956342570018023,
+      "busy_cycles": 153082,
+      "axis_payload_bytes": 179700,
+      "dma_mm2s_status": 4098,
+      "dma_s2mm_status": 4098,
+      "repeat": 1
+    },
+    {
+      "suite": "network",
+      "exact_values": 114762,
+      "commands": 293,
+      "host_seconds": 22.31256125299842,
+      "busy_cycles": 3660973,
+      "axis_payload_bytes": 8437392,
+      "dma_mm2s_status": 4098,
+      "dma_s2mm_status": 4098,
+      "repeat": 1
+    },
+    {
+      "suite": "network-image1",
+      "exact_values": 114762,
+      "commands": 293,
+      "host_seconds": 21.984899555012817,
+      "busy_cycles": 3660992,
+      "axis_payload_bytes": 8437392,
+      "dma_mm2s_status": 4098,
+      "dma_s2mm_status": 4098,
+      "repeat": 1
+    },
+    {
+      "suite": "directed",
+      "exact_values": 10524,
+      "commands": 94,
+      "host_seconds": 0.962576835998334,
+      "busy_cycles": 153062,
+      "axis_payload_bytes": 179700,
+      "dma_mm2s_status": 4098,
+      "dma_s2mm_status": 4098,
+      "repeat": 2
+    },
+    {
+      "suite": "network",
+      "exact_values": 114762,
+      "commands": 293,
+      "host_seconds": 22.294711302005453,
+      "busy_cycles": 3660990,
+      "axis_payload_bytes": 8437392,
+      "dma_mm2s_status": 4098,
+      "dma_s2mm_status": 4098,
+      "repeat": 2
+    },
+    {
+      "suite": "network-image1",
+      "exact_values": 114762,
+      "commands": 293,
+      "host_seconds": 21.92114614599268,
+      "busy_cycles": 3661032,
+      "axis_payload_bytes": 8437392,
+      "dma_mm2s_status": 4098,
+      "dma_s2mm_status": 4098,
+      "repeat": 2
+    }
+  ],
+  "stress_iterations": 100,
+  "status": "PASS",
+  "header_fault_reset": "PASS",
+  "temperature_end_c": 43.925555419788004
+}

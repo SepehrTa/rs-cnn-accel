@@ -1,0 +1,3 @@
+float model (BN folded): 86.70%
+int8 model:              86.55%   (same prediction as float on 98.80%)
+saved build/resnet8_int8.npz: integer parameters, graph, and every tensor for 4 test images

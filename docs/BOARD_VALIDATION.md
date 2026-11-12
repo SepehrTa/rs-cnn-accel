@@ -1,5 +1,10 @@
 # Reproducible build and board validation
 
+Actual board execution is now recorded in [BOARD_RESULTS.md](BOARD_RESULTS.md),
+with logs in `reports/board-2025.2/`. The original 2026.1 build instructions and
+historical availability notes below are retained; the deployed 2025.2 build is
+`build/board-resume-v2`.
+
 Run from the repository root. All generated files stay under `build/`.
 Vivado 2026.1 and XSim were found at `C:/vivado/2026.1/Vivado` on this machine.
 No Python packages or system board files were installed during development.
@@ -13,6 +18,9 @@ python scripts/run_rtl.py --suite control
 python scripts/run_rtl.py --suite network
 # Reuse an actual trained quantize.py export and its first embedded image:
 python scripts/run_rtl.py --suite network --archive model/resnet8_int8.npz
+# Select another exported image (zero-based; repeat for each embedded image):
+python scripts/run_rtl.py --suite network --archive model/resnet8_int8.npz --image 1
+python -m unittest discover -s tests -p test_vectors.py -v
 
 & 'C:/vivado/2026.1/Vivado/bin/vivado.bat' -mode batch -source scripts/synth.tcl
 python scripts/fetch_ps_preset.py
@@ -45,32 +53,51 @@ support and a working license (BASIC license was available here).
 
 ## Training and trained archive
 
+The resumed run completed training, quantization, full-test reference accuracy,
+four trained-image RTL comparisons and three board repeats per image; see
+BOARD_RESULTS.md. The paragraphs below record the original PC's starting state.
+
 Preserved original workflow: see README and `model/requirements.txt`. PyTorch,
 torchvision, trained weights and CIFAR-10 are absent on the development machine.
 No trained accuracy is claimed. The network RTL test emits
 `build/sim/network/synthetic_int8.npz`, deterministic random quantized parameters
 in the existing export's graph/parameter/vector format, with label -1 meaning
 synthetic/unlabelled. This fixture tests arithmetic, not classification accuracy.
-For a real archive, the RTL runner first recomputes and validates every embedded
-first-image tensor and then feeds actual RTL outputs into subsequent layers.
+For a real archive, the RTL runner recomputes and validates every tensor for the
+selected image before generating packets, then feeds actual RTL outputs into
+subsequent layers. The default is image zero. Negative/out-of-range indices,
+missing tensors, invalid tensor shapes, noninteger inputs and INT8 input overflow
+are rejected. Nonzero image runs use separate folders such as
+`build/sim/network-image1`, or `network-cols4-image1` with `--cols 4`.
 
-## On-board procedure (not executed here)
+On the resumed PC, Vivado is at `C:/AMDDesignTools/2025.2/Vivado`; pass
+`--vivado C:/AMDDesignTools/2025.2/Vivado` explicitly to the RTL commands above.
+The runner specifies a default `1ns/1ps` timescale for RTL modules; without it,
+XSim 2025.2 rejects the mixed timed/untimed module hierarchy at elaboration.
+These simulation results do not establish implementation timing in 2025.2.
 
-Loading an overlay programs the PL. Obtain the owner's approval before performing
-this step. No accessible board address or active PYNQ session was provided.
+## On-board procedure
+
+Loading an overlay programs the PL. The owner explicitly authorized deployment
+on the PYNQ-Z2 at 192.168.2.99; see BOARD_RESULTS.md for actual executed tests.
 
 1. Use a booted PYNQ-Z2 with a known-good PYNQ image, working DDR and Python PYNQ
    DMA API. Record image/PYNQ version, board revision, temperatures and supply.
 2. Check full board timing/DRC reports and review the official PS preset warnings.
-   Copy matching `.bit` and `.hwh`, the host directory and NPZ onto the board.
+   Copy matching `.bit` and `.hwh`, the `host/` and `model/` directories in their
+   repository layout, and NPZ onto the board. Archive preflight uses the NumPy
+   reference in `model/nn_numpy.py`; training packages are not needed for it.
 3. Start with the deterministic synthetic archive, then use a trained export:
 
    ```sh
-   sudo -E python3 host/accelerator.py rs_accel.bit synthetic_int8.npz --image 0
-   sudo -E python3 host/accelerator.py rs_accel.bit resnet8_int8.npz --image 0
+   sudo env XILINX_XRT=/usr /usr/local/share/pynq-venv/bin/python3 host/accelerator.py rs_accel.bit synthetic_int8.npz --image 0
+   sudo env XILINX_XRT=/usr /usr/local/share/pynq-venv/bin/python3 host/accelerator.py rs_accel.bit resnet8_int8.npz --image 0
+   sudo env XILINX_XRT=/usr /usr/local/share/pynq-venv/bin/python3 host/accelerator.py rs_accel.bit resnet8_int8.npz --image 1
    ```
 
-4. The host checks ABI, arms S2MM before MM2S, submits tiles and checks **every**
+4. Before loading the overlay, the CLI checks the image index and recomputes
+   every exported tensor for that image. The host checks ABI, arms S2MM before
+   MM2S, submits tiles and checks **every**
    tensor against the embedded export vectors. Require exact logits and argmax.
    Repeat all embedded images. On a DMA/header error, stop channels, reset DMA
    and accelerator (or reload the overlay with authorization) before retrying.
@@ -83,5 +110,6 @@ this step. No accessible board address or active PYNQ session was provided.
    record measured accuracy/latency/throughput. Check DMA stress, repeated reset,
    back-to-back inference and long-run stability before deployment.
 
-No board execution, DDR validation, measured images/s, or measured power is
-asserted by the software/RTL tests or by bitstream generation.
+Software/RTL tests and bitstream generation alone do not establish real board
+operation. Actual DMA/inference results and measured images/s are separately
+recorded in BOARD_RESULTS.md. Power and DDR electrical margins are not measured.

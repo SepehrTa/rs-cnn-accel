@@ -1,0 +1,26 @@
+{
+  "python": "3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]",
+  "numpy": "2.5.4",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "artifacts": {
+    "build/board-resume-v2/rs_accel.bit": {
+      "sha256": "83d9580b8638b255a73062ea06a4df561e5520bcec2a0004368aa1c9f817b46b",
+      "bytes": 4045690
+    },
+    "build/board-resume-v2/rs_accel.hwh": {
+      "sha256": "8a9150ce45ef9eecf2feb1ceca76c3a533c4424facb22c4fea4480f5daddf14a",
+      "bytes": 308804
+    },
+    "build/resnet8_int8.npz": {
+      "sha256": "c1e44110176181eba1fc53ea27568491870bda9752f092cdac7da0059e629e10",
+      "bytes": 2400312
+    },
+    "build/resnet8_float.npz": {
+      "sha256": "e3897679dc8b6c66bc2b4a980630513165ac809f28bae0d758d08dbf783852a6",
+      "bytes": 326836
+    }
+  },
+  "trained_rtl_images": 4,
+  "trained_board_runs": 12,
+  "provenance_checks": "PASS"
+}

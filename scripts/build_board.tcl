@@ -18,6 +18,9 @@ cd $out
 create_project rs_board $out -part xc7z020clg400-1 -force
 set_param general.maxThreads 4
 add_files [glob [file join $root hw *.sv]]
+# Module references in Vivado 2025.2 require a Verilog top file. This wrapper
+# uses Verilog-2001 syntax; its datapath children remain SystemVerilog.
+set_property FILE_TYPE Verilog [get_files rs_accel_top.sv]
 update_compile_order -fileset sources_1
 create_bd_design system
 create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 ps7

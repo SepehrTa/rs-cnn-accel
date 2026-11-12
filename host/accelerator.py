@@ -5,9 +5,9 @@ import time
 import numpy as np
 
 try:
-    from .protocol import forward, load_model
+    from .protocol import forward, load_model, load_vector
 except ImportError:
-    from protocol import forward, load_model
+    from protocol import forward, load_model, load_vector
 
 
 class Accelerator:
@@ -81,22 +81,21 @@ def main():
     ap.add_argument('model')
     ap.add_argument('--image',type=int,default=0)
     args=ap.parse_args()
+    # Check selection and archive integrity before Board loads/programs the PL.
+    q,graph,expected_tensors=load_vector(args.model,args.image)
     from pynq_board import Board
     board=Board(args.bitstream)
     accel=Accelerator(board.overlay)
-    with np.load(args.model,allow_pickle=False) as z:
-        x=z['vec.input'][args.image:args.image+1].astype(np.int8)
-        start=time.monotonic()
-        t=accel.infer(args.model,x)
-        elapsed=time.monotonic()-start
-        for name,value in t.items():
-            expected=z[f'vec.{name}'][args.image:args.image+1]
-            if not np.array_equal(value,expected):
-                where=np.argwhere(value!=expected)[0]
-                raise AssertionError(f'{name}: first mismatch {tuple(where)}')
-        print('PASS every tensor; class',int(t['logits'].argmax()),'host seconds',elapsed)
-        print('busy cycles',accel.control.read(12),'commands',accel.commands,
-              'stream bytes',4*(accel.input_words+accel.output_words))
+    start=time.monotonic()
+    t=forward(accel,q,graph,expected_tensors['input'],cols=accel.cols)
+    elapsed=time.monotonic()-start
+    for name,value in t.items():
+        if not np.array_equal(value,expected_tensors[name]):
+            where=np.argwhere(value!=expected_tensors[name])[0]
+            raise AssertionError(f'{name}: first mismatch {tuple(where)}')
+    print('PASS every tensor; image',args.image,'class',int(t['logits'].argmax()),'host seconds',elapsed)
+    print('busy cycles',accel.control.read(12),'commands',accel.commands,
+          'stream bytes',4*(accel.input_words+accel.output_words))
 
 
 if __name__=='__main__': main()

@@ -5,6 +5,7 @@ Input may be wider than INT8 for FC only. Overflow is rejected before submission
 """
 import json
 from pathlib import Path
+import sys
 
 import numpy as np
 
@@ -132,6 +133,40 @@ def load_model(path):
             if keys:
                 q[name] = {k: z[f'{name}.{k}'].copy() for k in keys}
         return q, graph
+
+
+def load_vector(path, image=0):
+    """Load one exported image and check every tensor before hardware access."""
+    # The CLI also runs directly as ``python host/accelerator.py``.
+    model_dir = str(Path(__file__).resolve().parents[1] / 'model')
+    if model_dir not in sys.path:
+        sys.path.insert(0, model_dir)
+    from nn_numpy import forward_int
+
+    q, graph = load_model(path)
+    with np.load(Path(path), allow_pickle=False) as z:
+        inputs = z['vec.input']
+        if inputs.ndim != 4 or inputs.shape[0] == 0:
+            raise ValueError('vec.input must be a nonempty NCHW batch')
+        if not 0 <= image < len(inputs):
+            raise ValueError(f'image index {image} outside 0..{len(inputs)-1}')
+        x = inputs[image:image+1]
+        if not np.issubdtype(x.dtype, np.integer):
+            raise ValueError('vec.input must contain integer activations')
+        check_int8(x)
+        tensors = forward_int(q, graph, x.astype(np.int64))
+        for name, value in tensors.items():
+            key = f'vec.{name}'
+            if key not in z:
+                raise ValueError(f'archive is missing {key}')
+            saved = z[key]
+            if saved.shape != (len(inputs), *value.shape[1:]):
+                raise ValueError(f'{key}: invalid exported tensor shape {saved.shape}')
+            expected = saved[image:image+1]
+            if not np.array_equal(value, expected):
+                where = tuple(int(i) for i in np.argwhere(value != expected)[0])
+                raise ValueError(f'{key}: image {image} differs from golden recomputation at {where}')
+    return q, graph, tensors
 
 
 def forward(transport, q, graph, x, cols=8):

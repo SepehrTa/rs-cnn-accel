@@ -1,5 +1,9 @@
 # Validation and performance report
 
+This is the original PC's implementation report. For the subsequent actual
+PYNQ-Z2 deployment, 2025.2 timing, measured inference and trained-model results,
+see [BOARD_RESULTS.md](BOARD_RESULTS.md).
+
 Date: 2026-11-12. Branch: `codex/rs-rtl-integration`.
 This report distinguishes executable software/RTL results, Vivado implementation,
 and board measurements. The project has a working simulated inference path and

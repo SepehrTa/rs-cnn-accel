@@ -1,5 +1,41 @@
 # Live implementation status
 
+## Actual board deployment (2026-11-12)
+
+- User authorized programming and supplied access to PYNQ-Z2 at 192.168.2.99.
+- Newly rebuilt Vivado 2025.2 pair in `build/board-resume-v2` deployed at 100 MHz;
+  setup/hold slack +0.152/+0.012 ns; 9,013 LUT, 6,619 FF, 59 DSP, four BRAM tiles.
+- Board header-fault reset, 100 DMA/reset stress transfers, three directed
+  passes and six full-network synthetic passes all PASS, every tensor exact.
+- Normal host inference also PASS; about 2.41 s/image including tiling/DMA,
+  ~36.61 ms core-busy time. See BOARD_RESULTS.md and reports/board-2025.2.
+- Original 60-epoch training/export completed: PyTorch 86.68%, NumPy float
+  86.70%, INT8 86.55% on all 10,000 CIFAR-10 test images.
+- All four trained images pass full XSim and three board host-inference passes
+  (1,377,144 exact board values); trained board latency averages 2.40833 s/image.
+- Six AGENTS.md acceptance categories satisfied; see BOARD_RESULTS.md for
+  source changes, commands, evidence and measurement limits. Earlier "no board"
+  and "no trained archive" notes below describe the original PC's state.
+
+## Resumed on second PC (2026-11-12)
+
+- Restored `codex/rs-rtl-integration` at `bc6088c` from GitHub; current work is
+  on `codex/resume-validation`.
+- Python 3.14.7 / NumPy 2.5.4 baseline passes: 11 NumPy checks, 27 mapper checks,
+  eight host/protocol tests. Vivado/XSim 2025.2 is installed on this PC.
+- Added explicit XSim timescale for 2025.2 elaboration compatibility.
+- Added checked archive image selection to RTL and board CLI; board CLI checks
+  archive integrity before overlay loading. Seven new regression tests pass.
+- Original PE/control/directed/full-network RTL suites pass here. Full network:
+  114,762 exact values, 293 packets, 3,802,331 wall cycles, matching prior evidence.
+- A distinct second synthetic image also passes the complete RTL graph with
+  all 114,762 values exact using the new archive `--image 1` path.
+- See RESUME_VALIDATION.md for changed files, commands and remaining work.
+- Trained NPZ files, datasets, `.bit`/`.hwh` files are excluded from the Git
+  backup. This checkout has source and retained reports, not those artifacts.
+
+The sections below record the original PC's implementation and evidence.
+
 ## Completed / evidence
 
 - Audited all existing source files; created dedicated feature branch.
@@ -38,7 +74,7 @@
 - Measured XSim 24/48/72-PE graph cycles: 4,512,027 / 3,802,331 / 3,736,486.
   Keep 48 PEs: 72 PEs improve this schedule by only ~1.7%.
 
-## Remaining TODO
+## Original-PC remaining TODO (superseded by board results above)
 
 - [ ] Obtain trained archive/CIFAR data; run trained-vector RTL comparison and
   labelled dataset accuracy. Existing training/export entry points preserved.

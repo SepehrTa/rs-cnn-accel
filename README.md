@@ -15,19 +15,34 @@ A banked BRAM ingress FIFO, AXI4-Lite control and AXI-stream interface connect
 to PS7/AXI DMA in a reproducible PYNQ-Z2 block design. The PYNQ host compiles
 tiles and checks every exported intermediate tensor.
 
-XSim executes the full ResNet-8 graph with deterministic synthetic weights,
-feeding actual RTL outputs into later layers. All 114,762 intermediate/final
-values match the integer reference exactly. This is arithmetic verification;
-trained accuracy and board execution require supplied weights/data and a board.
-Vivado 2026.1 generated a full PS7/DMA bitstream with timing met at 100 MHz:
-9,014 LUTs, 6,615 FFs, 59 DSPs, four BRAM36-equivalent tiles, setup slack
-+0.261 ns and hold slack +0.024 ns. The matching files are
-`build/board-final/rs_accel.bit` and `.hwh`. No board programming was performed;
-retained build/preset warnings and deployment checks are detailed in the report.
+XSim executes the full ResNet-8 graph, feeding actual RTL outputs into later
+layers. All 114,762 intermediate/final values per image match the integer
+reference exactly. The actual PYNQ-Z2 has now been programmed and tested:
+720,144 synthetic output comparisons, header-fault recovery, 100 DMA/reset
+stress transfers, and normal Python inference all pass. Measured synthetic
+host inference is about 2.41 s/image, including tiling/allocation/DMA; core busy
+time is about 36.61 ms. These are distinct from analytical throughput estimates.
+
+The deployed Vivado 2025.2 PS7/DMA build meets 100 MHz: 9,013 LUTs, 6,619 FFs,
+59 DSPs, four BRAM36-equivalent tiles, setup slack +0.152 ns and hold slack
++0.012 ns. Its matching files are `build/board-resume-v2/rs_accel.bit` and `.hwh`.
+See [actual board results](docs/BOARD_RESULTS.md) for executed commands, evidence,
+trained-model status and measurement limits. Earlier 2026.1 reports are retained
+as historical evidence; they describe a separate build.
+
+The original 60-epoch model has now been trained and exported: **86.55% INT8
+accuracy on the 10,000-image CIFAR-10 test set in the NumPy reference**. All four
+exported trained images match every tensor in RTL and on the board (three
+repetitions each). Trained board inference averages **2.408 s/image**. Full-set
+accuracy and the four-image hardware comparison are separate measurements.
+The portable source/weights/deployment/evidence package is
+`build/rs-cnn-accel-pynq-z2-validated.zip`; see BOARD_RESULTS.md for reproduction.
 
 See [architecture and packet ABI](docs/ARCHITECTURE.md),
 [build and board procedure](docs/BOARD_VALIDATION.md),
 [live progress](docs/PROGRESS.md), and [validation report](docs/VALIDATION_REPORT.md).
+For the restored checkout and validation on the second PC, see
+[resume audit](docs/RESUME_VALIDATION.md).
 The original 12x14 mapper estimates below describe a different analytical
 schedule and must not be used as measured RTL or board throughput.
 
@@ -35,6 +50,7 @@ schedule and must not be used as measured RTL or board throughput.
 python tests/test_nn_numpy.py
 python tests/test_rs.py
 python -m unittest discover -s tests -p test_protocol.py -v
+python -m unittest discover -s tests -p test_vectors.py -v
 python scripts/run_rtl.py --suite pe
 python scripts/run_rtl.py --suite control
 python scripts/run_rtl.py --suite directed

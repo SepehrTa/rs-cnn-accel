@@ -1,0 +1,121 @@
+{
+  "platform": "Linux-6.6.10-xilinx-v2024.1-g3c0eca68c652-armv7l-with-glibc2.35",
+  "pynq": "3.1.1",
+  "numpy": "1.21.5",
+  "bitstream_sha256": "83d9580b8638b255a73062ea06a4df561e5520bcec2a0004368aa1c9f817b46b",
+  "archive_sha256": "ae6f69ea07c6b9defc8fbba3e3876cf141a75afe972c698e1dda22bd398856a8",
+  "preflight_seconds": 1.5113050130021293,
+  "runs": [
+    {
+      "repeat": 0,
+      "image": 0,
+      "label": -1,
+      "prediction": 9,
+      "logits": [
+        [
+          2802,
+          -23499,
+          -14789,
+          -1685,
+          2527,
+          282,
+          7802,
+          -3357,
+          -20564,
+          16431
+        ]
+      ],
+      "exact_values": 114762,
+      "host_seconds": 2.4184697379823774,
+      "transport_seconds": 1.6547096433641855,
+      "compile_and_assembly_seconds": 0.7637600946181919,
+      "busy_cycles": 3661003,
+      "commands": 293,
+      "axis_payload_bytes": 8437392
+    },
+    {
+      "repeat": 0,
+      "image": 1,
+      "label": -1,
+      "prediction": 9,
+      "logits": [
+        [
+          2957,
+          -23454,
+          -14843,
+          -1970,
+          2777,
+          460,
+          7759,
+          -3196,
+          -20500,
+          16587
+        ]
+      ],
+      "exact_values": 114762,
+      "host_seconds": 2.4624585499987006,
+      "transport_seconds": 1.697867561946623,
+      "compile_and_assembly_seconds": 0.7645909880520776,
+      "busy_cycles": 3661009,
+      "commands": 293,
+      "axis_payload_bytes": 8437392
+    },
+    {
+      "repeat": 1,
+      "image": 0,
+      "label": -1,
+      "prediction": 9,
+      "logits": [
+        [
+          2802,
+          -23499,
+          -14789,
+          -1685,
+          2527,
+          282,
+          7802,
+          -3357,
+          -20564,
+          16431
+        ]
+      ],
+      "exact_values": 114762,
+      "host_seconds": 2.3849285690230317,
+      "transport_seconds": 1.6321211117319763,
+      "compile_and_assembly_seconds": 0.7528074572910555,
+      "busy_cycles": 3661011,
+      "commands": 293,
+      "axis_payload_bytes": 8437392
+    },
+    {
+      "repeat": 1,
+      "image": 1,
+      "label": -1,
+      "prediction": 9,
+      "logits": [
+        [
+          2957,
+          -23454,
+          -14843,
+          -1970,
+          2777,
+          460,
+          7759,
+          -3196,
+          -20500,
+          16587
+        ]
+      ],
+      "exact_values": 114762,
+      "host_seconds": 2.3717372580140363,
+      "transport_seconds": 1.627470558101777,
+      "compile_and_assembly_seconds": 0.7442666999122594,
+      "busy_cycles": 3661012,
+      "commands": 293,
+      "axis_payload_bytes": 8437392
+    }
+  ],
+  "status": "PASS",
+  "mean_host_seconds": 2.4093985287545365,
+  "mean_images_per_second": 0.41504134250340013
+}

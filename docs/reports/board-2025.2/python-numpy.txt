@@ -1,0 +1,13 @@
+PASS  conv2d k=3 stride=1
+PASS  conv2d k=3 stride=2
+PASS  conv2d k=1 stride=2
+PASS  batch-norm folding
+PASS  requant m=0.3 (M=1288490189, S=1)
+PASS  requant m=0.5 (M=1073741824, S=0)
+PASS  requant m=0.75 (M=1610612736, S=0)
+PASS  requant m=0.999 (M=2145336164, S=0)
+PASS  requant m=0.0001 (M=1759218604, S=13)
+PASS  requant m=2.5 (M=1342177280, S=-2)
+PASS  int8 model tracks float (max logit error 2.0% of range)
+
+ALL PASS

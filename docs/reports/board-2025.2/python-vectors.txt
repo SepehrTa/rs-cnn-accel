@@ -1,0 +1,13 @@
+test_board_cli_rejects_index_before_overlay_import (test_vectors.VectorTests.test_board_cli_rejects_index_before_overlay_import) ... ok
+test_reject_corrupt_selected_intermediate (test_vectors.VectorTests.test_reject_corrupt_selected_intermediate) ... ok
+test_reject_input_before_int8_wrap (test_vectors.VectorTests.test_reject_input_before_int8_wrap) ... ok
+test_reject_invalid_indices_and_empty_batch (test_vectors.VectorTests.test_reject_invalid_indices_and_empty_batch) ... ok
+test_reject_missing_and_wrong_shape (test_vectors.VectorTests.test_reject_missing_and_wrong_shape) ... ok
+Golden classification: 1 logits: [[-31, -5]]
+test_rtl_vectors_use_selected_image (test_vectors.VectorTests.test_rtl_vectors_use_selected_image) ... ok
+test_select_second_image (test_vectors.VectorTests.test_select_second_image) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.161s
+
+OK
