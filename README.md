@@ -124,9 +124,10 @@ vivado -mode batch -source scripts/build_board.tcl -tclargs bitstream board-fina
 The hash-pinned preset is downloaded into `build/vendor/`; no system board
 store is changed. The script checks run completion and setup/hold timing, then
 publishes `build/board-final/rs_accel.bit` and `rs_accel.hwh`. With the GUI flow,
-the corresponding generated files are under `rs-cnn-accel.runs/impl_1/` and
-`rs-cnn-accel.gen/sources_1/bd/system/hw_handoff/`; copy/rename the matching pair
-for deployment. See [build and board procedure](docs/BOARD_VALIDATION.md).
+the generated bitstream is in the project implementation run directory and
+the matching HWH is in the generated block-design `hw_handoff/` directory.
+Vivado may name the generated directory `rs_board.gen`; use the paths shown
+by the project, and copy/rename the matching pair for deployment. See [build and board procedure](docs/BOARD_VALIDATION.md).
 
 ## Verification
 

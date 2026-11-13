@@ -50,3 +50,8 @@ intermediate checks and all 10,000 images, diagnose the tiled follow-up failure,
 retain exact logits/counters, and publish the final comparison. Continue with
 `RESIDENT_USAGE.md`; this checkpoint must not be described as those tests having
 passed. The previous validated v1 results remain in `BOARD_RESULTS.md`.
+
+The published checkpoint was downloaded from GitHub and all 174 bundle files
+were checked against their SHA256 manifest. A fresh source snapshot also passed
+`scripts/prepare_vivado.tcl` in Vivado 2025.2; its log is retained in
+`reports/resident-v2/published-clone-prepare.txt`.
