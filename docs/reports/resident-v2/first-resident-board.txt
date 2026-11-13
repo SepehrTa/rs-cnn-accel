@@ -1,0 +1,3 @@
+SSH host key SHA256:TB0FfGjfMzgZUv/reJgTpeq/AM68sMCpGC5xm6Pit7o
+loaded rs_accel.bit, FCLK0 = 100.0 MHz
+PASS exact resident logits {"image": 0, "prediction": 3, "logits": [[-67415, -83107, 74169, 420866, -179179, 176956, 48877, -118930, -83744, -189278]], "host_seconds": 0.027153439994435757, "counters": {"core_cycles": 2310131, "tiles": 71, "dma_input_words": 784, "dma_output_words": 10, "macs": 12500992, "load_wait_cycles": 851094, "overlap_cycles": 69248, "network_cycles": 2315746, "model_reads": 37171, "activation_reads": 160010, "activation_write_bytes": 118056, "images": 1, "hp_read_beats": 392, "hp_write_beats": 5, "hp_write_bytes": 40, "hp_read_requests": 49, "hp_write_requests": 1}}

@@ -70,7 +70,7 @@ class ProtocolTests(unittest.TestCase):
                 if self.name=='recv': buf[:]=[-128,127]
             def wait(self): events.append('wait'+self.name)
             def stop(self): events.append('stop')
-        mmio=SimpleNamespace(read=lambda off:{0:Accelerator.ABI,0x14:0x02030820,8:0}[off],
+        mmio=SimpleNamespace(read=lambda off:{0:0x52530001,0x14:0x02030820,8:0}[off],
                              write=lambda off,val:events.append('reset'))
         dma=SimpleNamespace(sendchannel=Channel('send'),recvchannel=Channel('recv'))
         overlay=SimpleNamespace(axi_dma_0=dma,rs_accel_0=SimpleNamespace(mmio=mmio))

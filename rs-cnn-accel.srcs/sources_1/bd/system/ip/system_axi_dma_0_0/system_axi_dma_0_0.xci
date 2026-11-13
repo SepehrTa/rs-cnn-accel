@@ -5,7 +5,7 @@
     "cell_name": "axi_dma_0",
     "component_reference": "xilinx.com:ip:axi_dma:7.1",
     "ip_revision": "37",
-    "gen_directory": "../../../../../../rs-cnn-accel.gen/sources_1/bd/system/ip/system_axi_dma_0_0",
+    "gen_directory": "../../../../../../rs_board.gen/sources_1/bd/system/ip/system_axi_dma_0_0",
     "parameters": {
       "component_parameters": {
         "Component_Name": [ { "value": "system_axi_dma_0_0", "resolve_type": "user", "usage": "all" } ],
@@ -86,7 +86,7 @@
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
         "IPREVISION": [ { "value": "37" } ],
         "MANAGED": [ { "value": "TRUE" } ],
-        "OUTPUTDIR": [ { "value": "../../../../../../rs-cnn-accel.gen/sources_1/bd/system/ip/system_axi_dma_0_0" } ],
+        "OUTPUTDIR": [ { "value": "../../../../../../rs_board.gen/sources_1/bd/system/ip/system_axi_dma_0_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
         "SHAREDDIR": [ { "value": "../../ipshared" } ],
         "SWVERSION": [ { "value": "2025.2" } ],
@@ -1087,5 +1087,5 @@
       }
     }
   },
-  "checksum": "fd11831d"
+  "checksum": "b5859755"
 }

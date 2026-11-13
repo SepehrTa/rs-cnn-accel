@@ -1,3 +1,12 @@
+# Resident performance work (ABI 3)
+
+Development status and evidence: [PERFORMANCE_V2.md](PERFORMANCE_V2.md).
+The 168-PE resident implementation passes complete dependency-preserving RTL
+checks; whole-board routing and full-set board validation remain active gates.
+See [RESIDENT_USAGE.md](RESIDENT_USAGE.md) for the new commands/counter ABI.
+
+The following sections retain the earlier ABI-1 project history.
+
 # Live implementation status
 
 ## Eyeriss-based improvement reporting (2026-11-12)

@@ -21,7 +21,7 @@ cd rs-cnn-accel
    **`rs-cnn-accel.xpr`** in the cloned repository's root folder.
 2. In **IP Integrator**, choose **Open Block Design** and open **`system`**.
    The diagram contains PS7, AXI DMA, control/memory interconnects, reset logic,
-   and `rs_accel_0`. The HDL top is **`system_wrapper`**.
+   `rs_accel_0` and the passive `rs_ddr_monitor_0`. The HDL top is **`system_wrapper`**.
 3. For a fresh clone, choose **Tools > Run Tcl Script** and select
    **`scripts/prepare_vivado.tcl`**. This refreshes the RTL module reference,
    validates the block design, generates the vendor IP output products, and
@@ -46,96 +46,55 @@ recreated locally. A fresh clone therefore has no completed implementation to
 open until it has been built. Use 2025.2 for the tested flow; migration to other
 Vivado releases has not been validated.
 
-## Design and verified results
+## Resident performance implementation
 
-The default array has **48 PEs (6 x 8)**. Each PE retains activation/weight rows
-and local partial sums; the design uses horizontal weight multicast, diagonal
-activation reuse, and registered neighbor partial-sum links. It supports the
-exported network's 3x3/1x1 convolutions, stride 1/2, bias/requantization/ReLU,
-residual addition, sum pooling and INT32 classifier. AXI-Lite supplies control;
-AXI DMA connects the 32-bit streams to PS DDR through HP0.
+The board project selects **168 PEs (12 x 14), P=2, Q=2**. The datapath packs
+four INT8 values per stream word, initiates one MAC per active PE per compute
+clock, overlaps PE loads through ping-pong banks, and shares activation-row
+stores across filter groups. A BRAM-backed hardware sequencer executes all
+14 ResNet-8 operations; Python uploads the model once and launches one DMA
+pair per image using persistent buffers.
 
-The retained deployed-build measurements are listed below. A fresh
-implementation can have different placement, utilization and timing; see
-[fresh-clone validation](docs/CLONE_VALIDATION.md) for the publication check.
+The compiled trained model occupies **82,428 bytes** including descriptors and
+numeric parameters. Three **16 KiB** tensor regions preserve residual inputs.
+Normal inference transfers **3,176 stream bytes** including command headers:
+3,136 in and 40 out. Weights and intermediate tensors stay on chip.
 
-| Measurement | Observed result |
-|---|---|
-| Device / fabric clock | PYNQ-Z2 `xc7z020clg400-1`, 100 MHz |
-| Vivado 2025.2 routed setup / hold slack | +0.152 ns / +0.012 ns |
-| Complete PS7/DMA design resources | 9,013 LUTs; 6,619 FFs; 59 DSPs; four BRAM36-equivalent tiles |
-| INT8 NumPy reference accuracy | 86.55% on 10,000 CIFAR-10 test images |
-| Trained RTL comparison | Four images; all 114,762 intermediate/final values per image exact |
-| Actual board trained comparison | Four distinct images, three repetitions each; 1,377,144 exact values |
-| Actual board host inference | Mean 2.408 s/image, including Python tiling/allocation/DMA |
-| Actual board core-busy time | About 36.61 ms/image at 100 MHz |
-| Board robustness checks | Header-fault recovery, 100 signed DMA/reset transfers, and repeated synthetic graph tests passed |
+**Development checkpoint; full validation is pending.** RTL checks and the
+100 MHz routed build pass. One resident inference passed on PYNQ-Z2 with ten
+exact logits, 27.15 ms host latency and 3,176 DMA bytes. The board subsequently
+became unresponsive during a tiled follow-up test; its cause and the complete
+10,000-image run remain unresolved. See [checkpoint evidence and next steps](docs/RESIDENT_CHECKPOINT.md).
+See [implementation status](docs/PERFORMANCE_V2.md). Historical validated v1
+results are retained in [BOARD_RESULTS.md](docs/BOARD_RESULTS.md), including
+four trained images checked on the actual board. They do not establish a
+full-set board result for the new implementation.
 
-The full 10,000-image accuracy evaluation ran in the NumPy reference, not on
-the board. One of the four exported examples is misclassified by the model;
-its RTL/board tensors still exactly match the reference. Power and DDR
-signal-integrity margins were not measured. This is a restricted row-stationary
-schedule; analytical Eyeriss mapper throughput is not measured board throughput.
-See [actual board results](docs/BOARD_RESULTS.md) for commands, logs and limits.
+Read [resident architecture](docs/RESIDENT_ARCHITECTURE.md) and
+[resident build, run and counter guide](docs/RESIDENT_USAGE.md). The analytical
+Eyeriss mapper uses a different schedule; its convolution-only predictions
+are separate from whole-network simulation and board measurements.
 
-## Eyeriss-inspired improvements and real-board evidence
+A [development checkpoint bundle](deployment/resident-v2-checkpoint.zip) includes
+the matching bitstream/HWH, trained model archives and source. Its board
+validation limitations are documented in [deployment/README.md](deployment/README.md).
 
-The row-stationary design follows [Chen, Emer and Sze, Eyeriss (ISCA 2016),
-Section V](https://eems.mit.edu/wp-content/uploads/2016/04/eyeriss_isca_2016.pdf).
-The practical contribution here is a working PYNQ-Z2 INT8/ResNet-8 adaptation
-with the following implemented reuse mechanisms:
+## Run resident inference on PYNQ-Z2
 
-| Eyeriss-inspired mechanism | Implemented improvement |
-|---|---|
-| Stationary weight rows | Weights stay in PE-local storage while multiple output positions are computed. |
-| Activation-row reuse | Sliding-window reuse and diagonal multicast share input rows across output rows; both filter groups receive the shared input. |
-| Local and neighbor partial sums | Channel accumulations remain on-chip, and registered row-neighbor links reduce partial sums before output. No channel partial sums spill to DDR. |
-| Bounded storage hierarchy | Local row/psum memories and a banked ingress FIFO fit the 48-PE design into the PYNQ-Z2; the full PS7/DMA design uses four BRAM36-equivalent tiles. |
-
-**Quantified reuse improvement — RTL simulation, not board power/DDR counters:**
-the retained convolution trace executes 12,500,992 MACs with 849,408 PE weight
-writes and 5,841,920 PE activation writes. Against an explicit no-reuse model
-that reloads one weight and one activation into the PE for every MAC, this is
-**93.21% fewer weight loads**, **53.27% fewer activation loads**, or
-**73.24% fewer combined operand-load events**. Local scratchpad reads and psum
-updates still occur; these percentages are not total memory-traffic reductions.
-
-**What actually passed on the board:** 100 MHz operation, four trained images
-repeated three times with every intermediate tensor exact, DMA/reset/fault
-checks, and mean **2.408 s/image** through the complete host API. Mean core-busy
-time is **36.61 ms**; it excludes host/idle time and is not end-to-end throughput.
-The measured end-to-end rate is **0.415 images/s**. The current limit is Python
-tiling/allocation/DMA overhead, so the reuse percentages must not be converted
-into an application speedup.
-
-These are improvements over the stated no-reuse load model and a practical
-implementation of the paper's ideas, not a measured speed or energy advantage
-over the Eyeriss ASIC. No matched non-RS board baseline or power measurement
-exists. See [Eyeriss comparison and reproducible calculations](docs/EYERISS_COMPARISON.md).
-
-## Run on a PYNQ-Z2
-
-Opening/building the Vivado project does not require training. To run inference,
-you also need a quantized model archive and matching `.bit`/`.hwh` pair. Trained
-weights, datasets and generated deployment binaries are not part of the Git
-clone; regenerate them using the commands below or use a separately supplied
-validated deployment package.
-
-Copy `host/`, `model/`, `scripts/`, `resnet8_int8.npz`, `rs_accel.bit` and
-`rs_accel.hwh` into the same project directory on a booted PYNQ-Z2. The bitstream
-and HWH must come from the same build and have the same basename. On the tested
-PYNQ 3.1.1 image, run from that directory:
+Copy `host/`, `model/`, `scripts/`, the trained `resnet8_int8.npz`, CIFAR-10
+`test_batch`, and a matching timing-closed `rs_accel.bit`/`rs_accel.hwh` pair
+into one board directory. Generated weights, datasets and deployment binaries
+are excluded from the source clone. On the tested PYNQ 3.1.1 image:
 
 ```sh
-sudo env XILINX_XRT=/usr /usr/local/share/pynq-venv/bin/python3 host/accelerator.py rs_accel.bit resnet8_int8.npz --image 0
-sudo env XILINX_XRT=/usr /usr/local/share/pynq-venv/bin/python3 scripts/benchmark_board.py rs_accel.bit resnet8_int8.npz --repeat 3 --report board-inference-trained.json
+sudo env XILINX_XRT=/usr /usr/local/share/pynq-venv/bin/python3 scripts/benchmark_resident.py rs_accel.bit resnet8_int8.npz test_batch --count 10000 --report resident-board.json
 ```
 
-These commands program the FPGA. The first checks every tensor of one exported
-image; the benchmark checks every embedded image repeatedly and writes measured
-latency/counter results to JSON. Adjust the PYNQ Python environment path for
-your board image. No board login credentials or fixed IP address are required
-by the source code.
+This programs the FPGA, compares every intermediate tensor for the embedded
+validation images, then checks every logit of all 10,000 labelled test images.
+Use `--count 100` for a short smoke test. The report records actual completion,
+accuracy, cycles, utilization and measured HP0 DMA beats/bytes per MAC. Model
+upload/debug traffic is reported separately from normal inference.
 
 ## Regenerate the trained model and deployment pair
 
@@ -159,7 +118,7 @@ To build a deployment pair with the batch flow instead of the GUI:
 
 ```sh
 python scripts/fetch_ps_preset.py
-vivado -mode batch -source scripts/build_board.tcl -tclargs bitstream board-final
+vivado -mode batch -source scripts/build_board.tcl -tclargs bitstream board-final 14 f4 p2 q2
 ```
 
 The hash-pinned preset is downloaded into `build/vendor/`; no system board
@@ -183,6 +142,10 @@ python scripts/run_rtl.py --suite pe
 python scripts/run_rtl.py --suite control
 python scripts/run_rtl.py --suite directed
 python scripts/run_rtl.py --suite network
+python -m unittest discover -s tests -p test_packed.py
+python -m unittest discover -s tests -p test_resident.py
+python scripts/run_rtl.py --suite monitor
+python scripts/run_resident_rtl.py --archive build/resnet8_int8.npz --image 3
 ```
 
 For trained vectors, use `--suite network --archive build/resnet8_int8.npz
@@ -196,9 +159,9 @@ are retained in `docs/reports/`.
 |---|---|
 | `rs-cnn-accel.xpr` | Open this complete project in Vivado 2025.2 |
 | `rs-cnn-accel.srcs/` | Committed PS7/DMA block design and vendor IP configuration |
-| `hw/` | Five accelerator SystemVerilog files, Verilog board wrapper and OOC constraints |
+| `hw/` | Accelerator SystemVerilog files, Verilog board wrapper and OOC constraints |
 | `sim/` | Simulation testbenches; add as Simulation Sources for manual projects |
-| `host/` | Packet compiler and PYNQ overlay/DMA driver |
+| `host/` | Tile/resident compilers and persistent PYNQ DMA driver |
 | `model/` | Training, quantization/export and NumPy reference |
 | `mapper/` | Analytical row-stationary mapper and functional PE-array simulator |
 | `scripts/` | Project preparation, builds, validation and packaging |
@@ -208,8 +171,8 @@ are retained in `docs/reports/`.
 For manual RTL import, add `hw/*.sv` as Design Sources and `sim/*.sv` as
 Simulation Sources. `rs_accel_top` is the accelerator fabric top; a complete
 board overlay also needs the PS7/DMA block design. In Vivado 2025.2 its module
-reference wrapper `rs_accel_top.sv` must have File Type **Verilog**; the remaining
-four accelerator files are SystemVerilog. The committed project and preparation
+reference wrappers `rs_accel_top.sv` and `rs_ddr_monitor.sv` must have File Type **Verilog**; the remaining
+datapath files are SystemVerilog. The committed project and preparation
 script already apply this setting.
 
 See [architecture and packet ABI](docs/ARCHITECTURE.md),

@@ -2,6 +2,7 @@
 import argparse
 import hashlib
 import json
+import subprocess
 from pathlib import Path
 import zipfile
 
@@ -19,12 +20,12 @@ def main():
     if not out.is_relative_to(ROOT/'build'):
         ap.error('--out must remain inside repository build/')
     files = {}
-    for folder in ('hw','sim','host','model','mapper','scripts','tests','docs','rs-cnn-accel.srcs'):
-        for path in (ROOT/folder).rglob('*'):
-            if path.is_file() and '__pycache__' not in path.parts and path.suffix not in ('.pyc','.npz'):
-                files[path.relative_to(ROOT).as_posix()] = path
-    for name in ('README.md','AGENTS.md','requirements-test.txt','.gitignore','.gitattributes','rs-cnn-accel.xpr'):
-        files[name] = ROOT/name
+    # Package versioned inputs, excluding GUI session state, caches and local
+    # incremental checkpoints even if Vivado created them inside .srcs/.
+    tracked=subprocess.check_output(['git','ls-files','-z'],cwd=ROOT).decode().split('\0')
+    for name in tracked:
+        path=ROOT/name
+        if name and path.is_file() and not (name.startswith('deployment/') and path.suffix=='.zip'):files[name]=path
     files['rs_accel.bit'] = ROOT/args.board/'rs_accel.bit'
     files['rs_accel.hwh'] = ROOT/args.board/'rs_accel.hwh'
     files['resnet8_int8.npz'] = ROOT/args.model

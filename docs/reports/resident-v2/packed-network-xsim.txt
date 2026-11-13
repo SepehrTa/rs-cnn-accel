@@ -1,0 +1,78 @@
+Golden classification: 3 logits: [[-67415, -83107, 74169, 420866, -179179, 176956, 48877, -118930, -83744, -189278]]
+RUN C:\AMDDesignTools\2025.2\Vivado\bin\xvlog.bat --sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_accel_top.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_axis_buffer.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_ddr_monitor.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_packet_codec.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_pe.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_postprocess.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_resident.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_stream_core.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\sim\tb_stream.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\build\sim\network-cols14-packed-f4-p2-q2\tb_config.sv
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_accel_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_accel_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_axis_buffer.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_axis_buffer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_ddr_monitor.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_ddr_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_packet_codec.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_packet_codec
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_pe.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_postprocess.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_postprocess
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_resident.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_resident
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_stream_core.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_stream_core
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/sim/tb_stream.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_stream
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/build/sim/network-cols14-packed-f4-p2-q2/tb_config.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_config
+
+xvlog: 0.62s
+RUN C:\AMDDesignTools\2025.2\Vivado\bin\xelab.bat tb_config --timescale 1ns/1ps -s tb_stream_snapshot
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe tb_config --timescale 1ns/1ps -s tb_stream_snapshot 
+Multi-threading is on. Using 30 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'load_p' [C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_stream_core.sv:135]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'compute_p' [C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_stream_core.sv:136]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.rs_axis_buffer_default
+Compiling module work.rs_resident(COLS=14,FILTERS=4,P_...
+Compiling module work.rs_packet_codec
+Compiling module work.rs_axis_buffer(BANK_ADDR_BITS=2)
+Compiling module work.rs_pe(P_CONTEXTS=2,Q_CONTEXTS=2,...
+Compiling module work.rs_pe(P_CONTEXTS=2,Q_CONTEXTS=2,...
+Compiling module work.rs_postprocess
+Compiling module work.rs_stream_core(FILTERS=4,COLS=14...
+Compiling module work.rs_accel_top(COLS=14,FILTERS=4,P...
+Compiling module work.tb_stream(COLS=14,PACKED=1,FILTE...
+Compiling module work.tb_config
+Built simulation snapshot tb_stream_snapshot
+
+xelab: 4.10s
+RUN C:\AMDDesignTools\2025.2\Vivado\bin\xsim.bat tb_stream_snapshot -runall
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Thu Nov 12 19:23:05 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_stream_snapshot/xsim_script.tcl
+# xsim {tb_stream_snapshot} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS REUSE macs=12500992 PE_act_writes=730240 PE_weight_writes=849408
+PASS RTL inputs=155860 outputs=114762 packets=71 busy_cycles=1838665 wall_cycles=1840193
+PASS TRANSPORT packed=1 semantic_inputs=616246 physical_inputs=155860 physical_outputs=28746
+PASS CONTEXTS p=2 q=2 overlap_cycles=110886 load_wait_cycles=440138
+$finish called at time : 18401965 ns : File "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/sim/tb_stream.sv" Line 182
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:01:05 . Memory (MB): peak = 203.543 ; gain = 0.000
+exit
+INFO: xsimkernel Simulation Memory Usage: 20008 KB (Peak: 20008 KB), Simulation CPU Usage: 64218 ms
+INFO: [Common 17-206] Exiting xsim at Thu Nov 12 19:24:12 2026...
+
+xsim: 67.45s
+PASS network: 616246 input words, 114762 exact output words, 71 packets

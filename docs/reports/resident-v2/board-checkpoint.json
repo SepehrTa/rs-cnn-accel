@@ -1,0 +1,63 @@
+{
+  "status": "DEVELOPMENT_CHECKPOINT",
+  "board_images_verified": 1,
+  "exact_board_logits": 10,
+  "full_dataset_completed": false,
+  "full_v2_board_intermediate_validation_completed": false,
+  "clock_hz": 100000000,
+  "physical_pes": 168,
+  "p": 2,
+  "q": 2,
+  "resources": {
+    "luts": 29777,
+    "registers": 18264,
+    "bram36_equivalent": 53,
+    "dsps": 183
+  },
+  "setup_slack_ns": 0.034,
+  "hold_slack_ns": 0.056,
+  "first_board_inference": {
+    "image": 0,
+    "prediction": 3,
+    "logits": [
+      [
+        -67415,
+        -83107,
+        74169,
+        420866,
+        -179179,
+        176956,
+        48877,
+        -118930,
+        -83744,
+        -189278
+      ]
+    ],
+    "host_seconds": 0.027153439994435757,
+    "counters": {
+      "core_cycles": 2310131,
+      "tiles": 71,
+      "dma_input_words": 784,
+      "dma_output_words": 10,
+      "macs": 12500992,
+      "load_wait_cycles": 851094,
+      "overlap_cycles": 69248,
+      "network_cycles": 2315746,
+      "model_reads": 37171,
+      "activation_reads": 160010,
+      "activation_write_bytes": 118056,
+      "images": 1,
+      "hp_read_beats": 392,
+      "hp_write_beats": 5,
+      "hp_write_bytes": 40,
+      "hp_read_requests": 49,
+      "hp_write_requests": 1
+    }
+  },
+  "artifact_sha256": {
+    "rs_accel.bit": "8bb2129f3cd16cc35b4ae1f274b42ad75542267f5ffea4ea8093f28533de31cf",
+    "rs_accel.hwh": "52c59b44cd65018b1f59e36be5c96b9b9e716eb6bd01c93debf946ff65f32b50",
+    "resnet8_int8.npz": "c1e44110176181eba1fc53ea27568491870bda9752f092cdac7da0059e629e10"
+  },
+  "blocker": "PYNQ Linux stopped responding during follow-up tiled benchmark. Ethernet link remains up; SSH/ping and serial are unresponsive. Physical power cycle and further diagnosis are required before the 10,000-image run."
+}

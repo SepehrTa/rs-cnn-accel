@@ -1,3 +1,6 @@
+> Historical ABI-1 tile architecture. See [RESIDENT_ARCHITECTURE.md](RESIDENT_ARCHITECTURE.md)
+> for ABI-3 and [PERFORMANCE_V2.md](PERFORMANCE_V2.md) for validation status.
+
 # Implemented RS stream accelerator
 
 ## Schedule and communication

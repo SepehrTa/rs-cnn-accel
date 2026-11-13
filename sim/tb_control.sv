@@ -70,10 +70,10 @@ module tb_control;
             rready=1; @(negedge clk); rready=0;
         end
     endtask
-    integer i;
+    integer i,wait_cycles;
     initial begin
         repeat(4) @(negedge clk); rst=1;
-        read_reg(0,32'h52530001,0);
+        read_reg(0,32'h52530003,0);
         read_reg(8,0,0);
         read_reg(8'h14,32'h02030820,0);
         read_reg(8'hfc,0,2);
@@ -97,10 +97,27 @@ module tb_control;
         read_reg(8,0,0);
         for(i=0;i<16;i=i+1) send_word(i==0 ? 2 : i==1 ? 2 : i==2 ? 1 : 0);
         send_word(-128); send_word(127);
-        repeat(10) @(negedge clk);
+        for(wait_cycles=0;wait_cycles<256 && result_count!=1;wait_cycles=wait_cycles+1) @(negedge clk);
         if(result_count!=1) $fatal(1,"missing output after abort/reset");
         read_reg(16,1,0);
-        $display("PASS CONTROL independent AW/W, stalls, decode, fault, active abort and reset recovery");
+        // Reset with address/operand/product commits in flight, then prove a
+        // new convolution clears stale psums and cannot emit an old product.
+        fork
+            begin
+                for(i=0;i<16;i=i+1) send_word(i==0 ? 0 : i>=1 && i<=6 ? 1 : i==7 ? 64 : i==10 ? 1073741824 : i==11 ? 30 : 0);
+                repeat(128) send_word(1);
+            end
+            begin wait(dut.core.state==4);end
+        join_any
+        disable fork;
+        @(negedge clk);vin=0;
+        send_w(1,15);send_aw(4);response(0);
+        for(i=0;i<16;i=i+1) send_word(i==0 ? 0 : i>=1 && i<=7 ? 1 : i==10 ? 1073741824 : i==11 ? 30 : 0);
+        send_word(-1);send_word(1);
+        for(wait_cycles=0;wait_cycles<256 && result_count!=2;wait_cycles=wait_cycles+1) @(negedge clk);
+        if(result_count!=2) $fatal(1,"missing convolution after MAC pipeline abort");
+        read_reg(16,1,0);
+        $display("PASS CONTROL independent AW/W, stalls, decode, fault, pooling/MAC abort and reset recovery");
         $finish;
     end
     initial begin #100000; $fatal(1,"control watchdog"); end

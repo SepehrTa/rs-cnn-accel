@@ -5,7 +5,7 @@
     "cell_name": "locked",
     "component_reference": "xilinx.com:ip:xlconstant:1.1",
     "ip_revision": "10",
-    "gen_directory": "../../../../../../rs-cnn-accel.gen/sources_1/bd/system/ip/system_locked_0",
+    "gen_directory": "../../../../../../rs_board.gen/sources_1/bd/system/ip/system_locked_0",
     "parameters": {
       "component_parameters": {
         "Component_Name": [ { "value": "system_locked_0", "resolve_type": "user", "usage": "all" } ],
@@ -33,7 +33,7 @@
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
         "IPREVISION": [ { "value": "10" } ],
         "MANAGED": [ { "value": "TRUE" } ],
-        "OUTPUTDIR": [ { "value": "../../../../../../rs-cnn-accel.gen/sources_1/bd/system/ip/system_locked_0" } ],
+        "OUTPUTDIR": [ { "value": "../../../../../../rs_board.gen/sources_1/bd/system/ip/system_locked_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
         "SHAREDDIR": [ { "value": "../../ipshared" } ],
         "SWVERSION": [ { "value": "2025.2" } ],
@@ -46,5 +46,5 @@
       }
     }
   },
-  "checksum": "acc992f1"
+  "checksum": "ad53bfbc"
 }
