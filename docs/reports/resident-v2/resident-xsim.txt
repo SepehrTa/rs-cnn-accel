@@ -1,0 +1,101 @@
+RUN C:\AMDDesignTools\2025.2\Vivado\bin\xvlog.bat --sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_accel_top.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_axis_buffer.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_ddr_monitor.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_packet_codec.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_pe.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_postprocess.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_resident.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_stream_core.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\sim\tb_resident.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\build\sim\resident-f4-c14-p2-q2-image0\tb_config.sv
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_accel_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_accel_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_axis_buffer.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_axis_buffer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_ddr_monitor.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_ddr_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_packet_codec.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_packet_codec
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_pe.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_postprocess.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_postprocess
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_resident.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_resident
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_stream_core.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_stream_core
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/sim/tb_resident.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_resident
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/build/sim/resident-f4-c14-p2-q2-image0/tb_config.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_config
+
+xvlog: 0.61s
+RUN C:\AMDDesignTools\2025.2\Vivado\bin\xelab.bat tb_config --timescale 1ns/1ps -s resident_snapshot
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe tb_config --timescale 1ns/1ps -s resident_snapshot 
+Multi-threading is on. Using 30 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'load_p' [C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_stream_core.sv:135]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'compute_p' [C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_stream_core.sv:136]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.rs_axis_buffer_default
+Compiling module work.rs_resident(COLS=14,FILTERS=4,P_...
+Compiling module work.rs_packet_codec
+Compiling module work.rs_axis_buffer(BANK_ADDR_BITS=2)
+Compiling module work.rs_pe(P_CONTEXTS=2,Q_CONTEXTS=2,...
+Compiling module work.rs_pe(P_CONTEXTS=2,Q_CONTEXTS=2,...
+Compiling module work.rs_postprocess
+Compiling module work.rs_stream_core(FILTERS=4,COLS=14...
+Compiling module work.rs_accel_top(COLS=14,FILTERS=4,P...
+Compiling module work.tb_resident(INPUTS=22191,GOLDEN=...
+Compiling module work.tb_config
+Built simulation snapshot resident_snapshot
+
+xelab: 4.10s
+RUN C:\AMDDesignTools\2025.2\Vivado\bin\xsim.bat resident_snapshot -runall
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Thu Nov 12 19:00:24 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/resident_snapshot/xsim_script.tcl
+# xsim {resident_snapshot} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS LAYER           1 elements=      16384 tick=     251624
+PASS LAYER           2 elements=      16384 tick=     550274
+PASS LAYER           3 elements=      16384 tick=     848924
+PASS LAYER           4 elements=      16384 tick=     980082
+PASS LAYER           5 elements=       8192 tick=    1229840
+PASS LAYER           6 elements=       8192 tick=    1449262
+PASS LAYER           7 elements=       8192 tick=    1650380
+PASS LAYER           8 elements=       8192 tick=    1716002
+PASS LAYER           9 elements=       4096 tick=    1931108
+PASS LAYER          10 elements=       4096 tick=    2135718
+PASS LAYER          11 elements=       4096 tick=    2293992
+PASS LAYER          12 elements=       4096 tick=    2326846
+PASS LAYER          13 elements=         64 tick=    2334088
+PASS LAYER          14 elements=         10 tick=    2336362
+PASS LAYER          15 elements=      16384 tick=    2567390
+PASS LAYER          16 elements=      16384 tick=    2866040
+PASS LAYER          17 elements=      16384 tick=    3164690
+PASS LAYER          18 elements=      16384 tick=    3295848
+PASS LAYER          19 elements=       8192 tick=    3545606
+PASS LAYER          20 elements=       8192 tick=    3765028
+PASS LAYER          21 elements=       8192 tick=    3966146
+PASS LAYER          22 elements=       8192 tick=    4031768
+PASS LAYER          23 elements=       4096 tick=    4246874
+PASS LAYER          24 elements=       4096 tick=    4451484
+PASS LAYER          25 elements=       4096 tick=    4609758
+PASS LAYER          26 elements=       4096 tick=    4642612
+PASS LAYER          27 elements=         64 tick=    4649854
+PASS LAYER          28 elements=         10 tick=    4652128
+PASS RESIDENT exact_elements=     229524 layers=         28 cycles=   4631500 core_cycles=   4620262 macs=  25001984 model_reads=     74342 act_reads=    320020 act_write_bytes=    236112 overlap=    138496 wait=   1702188
+$finish called at time : 46521720 ns : File "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/sim/tb_resident.sv" Line 58
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:02:15 . Memory (MB): peak = 203.098 ; gain = 0.043
+exit
+INFO: xsimkernel Simulation Memory Usage: 17988 KB (Peak: 17988 KB), Simulation CPU Usage: 132983 ms
+INFO: [Common 17-206] Exiting xsim at Thu Nov 12 19:02:40 2026...
+
+xsim: 136.93s

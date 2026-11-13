@@ -5,11 +5,11 @@
     "cell_name": "control",
     "component_reference": "xilinx.com:ip:axi_interconnect:2.1",
     "ip_revision": "38",
-    "gen_directory": "../../../../../../rs-cnn-accel.gen/sources_1/bd/system/ip/system_control_0",
+    "gen_directory": "../../../../../../rs_board.gen/sources_1/bd/system/ip/system_control_0",
     "parameters": {
       "component_parameters": {
         "NUM_SI": [ { "value": "1", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "NUM_MI": [ { "value": "2", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "NUM_MI": [ { "value": "3", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "STRATEGY": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "ENABLE_ADVANCED_OPTIONS": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "ENABLE_PROTOCOL_CHECKERS": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
@@ -341,7 +341,7 @@
         "IPCONTEXT": [ { "value": "IP_Integrator_AppCore" } ],
         "IPREVISION": [ { "value": "38" } ],
         "MANAGED": [ { "value": "TRUE" } ],
-        "OUTPUTDIR": [ { "value": "../../../../../../rs-cnn-accel.gen/sources_1/bd/system/ip/system_control_0" } ],
+        "OUTPUTDIR": [ { "value": "../../../../../../rs_board.gen/sources_1/bd/system/ip/system_control_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
         "SHAREDDIR": [ { "value": "../../ipshared" } ],
         "SWVERSION": [ { "value": "2025.2" } ],
@@ -349,5 +349,5 @@
       }
     }
   },
-  "checksum": "367ce315"
+  "checksum": "80ad72a5"
 }

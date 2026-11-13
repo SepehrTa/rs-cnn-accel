@@ -1,12 +1,13 @@
 """Compile once and run XSim against deterministic packet vectors.
 
-python scripts/run_rtl.py --vivado C:/vivado/2026.1/Vivado --suite directed
-python scripts/run_rtl.py --vivado C:/vivado/2026.1/Vivado --suite network
+python scripts/run_rtl.py --vivado C:/AMDDesignTools/2025.2/Vivado --suite directed
+python scripts/run_rtl.py --vivado C:/AMDDesignTools/2025.2/Vivado --suite network
 """
 import argparse
 import hashlib
 import json
 import os
+import re
 from pathlib import Path
 import subprocess
 import sys
@@ -19,12 +20,15 @@ sys.path[:0] = [str(ROOT/'model'), str(ROOT/'host')]
 from graph import resnet8_graph
 from nn_numpy import conv2d, forward_int, requant
 from protocol import conv_packets, add_packet, pool_packet, fc_packet, load_vector
+from packed import pack_packet,output_words as packed_output_words
 
 
 class Vectors:
-    def __init__(self, folder, cols=8):
+    def __init__(self, folder, cols=8, packed=False, filters=2, p_contexts=1):
         self.folder = folder
         self.cols=cols
+        self.physical_filters=filters
+        self.filters=filters*p_contexts
         folder.mkdir(parents=True, exist_ok=True)
         self.stim = (folder/'stim.hex').open('w')
         self.expect = (folder/'expect.hex').open('w')
@@ -34,13 +38,17 @@ class Vectors:
         self.macs = self.act_writes = self.weight_writes = 0
         self.tensors = {}
         self.source = {}
+        self.packed=packed
+        self.physical_inputs=self.physical_outputs=0
 
     def emit(self, packet, expected, refs=None):
+        self.physical_inputs+=len(pack_packet(packet)) if self.packed else len(packet)
+        self.physical_outputs+=packed_output_words(packet,np.asarray(expected).size) if self.packed else np.asarray(expected).size
         h=packet[:16].astype(np.int64)
         if h[0]==0:
             k,pw,ow,e,f,c=(int(h[i]) for i in (1,3,4,5,6,7))
             self.macs+=c*f*e*ow*k*k
-            self.act_writes+=c*f*k*e*pw
+            self.act_writes+=c*k*e*pw
             self.weight_writes+=c*f*k*k*e
         p = packet.astype(np.uint64)
         if refs is not None:
@@ -63,12 +71,13 @@ class Vectors:
         (self.folder/'manifest.json').write_text(json.dumps(dict(
             inputs=self.inputs, outputs=self.outputs, packets=self.packets,
             macs=self.macs,pe_activation_writes=self.act_writes,
-            pe_weight_writes=self.weight_writes,tensors=self.tensors,source=self.source), indent=2))
+            pe_weight_writes=self.weight_writes,tensors=self.tensors,source=self.source,
+            packed=self.packed,physical_inputs=self.physical_inputs,physical_outputs=self.physical_outputs), indent=2))
 
 
 def conv(v, x, p, layer, ref, refs=None):
     outrefs = np.empty(ref.shape, np.int64)
-    for packet, region, _ in conv_packets(x, p, layer,cols=v.cols):
+    for packet, region, _ in conv_packets(x, p, layer,cols=v.cols,filters=v.filters):
         references = None
         if refs is not None:
             # Reuse the packet compiler's address generation on index tensors.
@@ -79,7 +88,7 @@ def conv(v, x, p, layer, ref, refs=None):
             ph = (nr-1)*u+k
             rp = np.pad(refs, ((0,0),(layer['pad'],layer['pad']),(layer['pad'],layer['pad'])), constant_values=-1)
             positions, addresses = [], []
-            pos = 16
+            pos = 16+3*max(0,nf-2)
             for c in range(nc):
                 patch = rp[c,y.start*u:y.start*u+ph,ox.start*u:ox.start*u+pw].ravel()
                 valid = np.flatnonzero(patch >= 0)
@@ -188,12 +197,16 @@ def run(cmd,cwd):
 
 def main():
     ap=argparse.ArgumentParser()
-    ap.add_argument('--vivado',default=os.environ.get('XILINX_VIVADO','C:/vivado/2026.1/Vivado'))
-    ap.add_argument('--suite',choices=['directed','network','control','pe'],default='directed')
+    ap.add_argument('--vivado',default=os.environ.get('XILINX_VIVADO','C:/AMDDesignTools/2025.2/Vivado'))
+    ap.add_argument('--suite',choices=['directed','network','control','pe','monitor'],default='directed')
     ap.add_argument('--archive',help='existing quantize.py NPZ; network suite only')
     ap.add_argument('--image',type=int,default=0,help='zero-based embedded archive image (network suite only)')
     ap.add_argument('--output',type=Path,help='separate generated output folder, inside repository build/')
     ap.add_argument('--cols',type=int,default=8,choices=range(1,33))
+    ap.add_argument('--packed',action='store_true',help='exercise four-byte stream packing with actual RTL dependencies')
+    ap.add_argument('--filters',type=int,default=2,choices=(1,2,4))
+    ap.add_argument('--p',type=int,default=1,choices=(1,2,4))
+    ap.add_argument('--q',type=int,default=1,choices=(1,2,4))
     args=ap.parse_args()
     if args.archive and args.suite != 'network':
         ap.error('--archive requires --suite network')
@@ -202,6 +215,8 @@ def main():
     folder=ROOT/'build'/'sim'/(args.suite if args.cols==8 else f'{args.suite}-cols{args.cols}')
     if args.image:
         folder=folder.with_name(f'{folder.name}-image{args.image}')
+    if args.packed: folder=folder.with_name(f'{folder.name}-packed')
+    if (args.filters,args.p,args.q)!=(2,1,1): folder=folder.with_name(f'{folder.name}-f{args.filters}-p{args.p}-q{args.q}')
     if args.output:
         folder=(ROOT/args.output).resolve()
         if not folder.is_relative_to(ROOT/'build'):
@@ -209,29 +224,32 @@ def main():
     folder.mkdir(parents=True,exist_ok=True)
     functional=args.suite in ('directed','network')
     if functional:
-        v=Vectors(folder,args.cols)
+        v=Vectors(folder,args.cols,args.packed,args.filters,args.p)
         try:
             (directed(v) if args.suite=='directed' else network(v,args.archive,args.image))
         finally:
             v.close()
     bin=Path(args.vivado)/'bin'
     suffix='.bat' if os.name=='nt' else ''
-    tb={'control':'tb_control','pe':'tb_pe'}.get(args.suite,'tb_stream')
+    tb={'control':'tb_control','pe':'tb_pe','monitor':'tb_ddr_monitor'}.get(args.suite,'tb_stream')
     extra=[]
     top=tb
     if functional:
         wrapper=folder/'tb_config.sv'
-        wrapper.write_text(f'module tb_config; tb_stream #(.COLS({args.cols})) test(); endmodule\n')
+        wrapper.write_text(f'module tb_config; tb_stream #(.COLS({args.cols}),.PACKED({int(args.packed)}),.FILTERS({args.filters}),.P_CONTEXTS({args.p}),.Q_CONTEXTS({args.q})) test(); endmodule\n')
         extra=[wrapper]
         top='tb_config'
     run([bin/f'xvlog{suffix}','--sv',*sorted((ROOT/'hw').glob('*.sv')),ROOT/'sim'/f'{tb}.sv',*extra],folder)
     run([bin/f'xelab{suffix}',top,'--timescale','1ns/1ps','-s',f'{tb}_snapshot'],folder)
     run([bin/f'xsim{suffix}',f'{tb}_snapshot','-runall'],folder)
     output=(folder/'xsim.stdout.txt').read_text()
-    marker={'control':'PASS CONTROL','pe':'PASS PE'}.get(args.suite,'PASS RTL')
+    marker={'control':'PASS CONTROL','pe':'PASS PE','monitor':'PASS DDR MONITOR'}.get(args.suite,'PASS RTL')
     if marker not in output or 'Fatal:' in output or 'Error:' in output:
         raise RuntimeError('simulation did not finish successfully')
     if functional:
+        match=re.search(r'PASS TRANSPORT packed=(\d+) semantic_inputs=(\d+) physical_inputs=(\d+) physical_outputs=(\d+)',output)
+        if not match or tuple(map(int,match.groups()))!=(int(args.packed),v.inputs,v.physical_inputs,v.physical_outputs):
+            raise RuntimeError('physical stream counts disagree with independent packet packing')
         print(f'PASS {args.suite}: {v.inputs} input words, {v.outputs} exact output words, {v.packets} packets')
 
 

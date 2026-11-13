@@ -1,0 +1,58 @@
+RUN C:\AMDDesignTools\2025.2\Vivado\bin\xvlog.bat --sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_accel_top.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_axis_buffer.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_ddr_monitor.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_packet_codec.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_pe.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_postprocess.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_resident.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_stream_core.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\sim\tb_ddr_monitor.sv
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_accel_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_accel_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_axis_buffer.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_axis_buffer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_ddr_monitor.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_ddr_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_packet_codec.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_packet_codec
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_pe.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_postprocess.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_postprocess
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_resident.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_resident
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_stream_core.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_stream_core
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/sim/tb_ddr_monitor.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_ddr_monitor
+
+xvlog: 0.61s
+RUN C:\AMDDesignTools\2025.2\Vivado\bin\xelab.bat tb_ddr_monitor --timescale 1ns/1ps -s tb_ddr_monitor_snapshot
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe tb_ddr_monitor --timescale 1ns/1ps -s tb_ddr_monitor_snapshot 
+Multi-threading is on. Using 30 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.rs_ddr_monitor
+Compiling module work.tb_ddr_monitor
+Built simulation snapshot tb_ddr_monitor_snapshot
+
+xelab: 0.85s
+RUN C:\AMDDesignTools\2025.2\Vivado\bin\xsim.bat tb_ddr_monitor_snapshot -runall
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Thu Nov 12 19:04:13 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_ddr_monitor_snapshot/xsim_script.tcl
+# xsim {tb_ddr_monitor_snapshot} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS DDR MONITOR handshakes, stalls, byte strobes, independent AW/W and reset
+$finish called at time : 420 ns : File "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/sim/tb_ddr_monitor.sv" Line 37
+exit
+INFO: [Common 17-206] Exiting xsim at Thu Nov 12 19:04:15 2026...
+
+xsim: 2.25s

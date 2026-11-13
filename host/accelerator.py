@@ -6,33 +6,41 @@ import numpy as np
 
 try:
     from .protocol import forward, load_model, load_vector
+    from .packed import pack_packet, output_words as packed_output_words, unpack_output
 except ImportError:
     from protocol import forward, load_model, load_vector
+    from packed import pack_packet, output_words as packed_output_words, unpack_output
 
 
 class Accelerator:
-    ABI = 0x52530001
+    ABI = 0x52530002
 
     def __init__(self, overlay, dma_name='axi_dma_0', control_name='rs_accel_0', timeout=10.0):
         self.dma = getattr(overlay, dma_name)
         self.control = getattr(overlay, control_name).mmio
         self.timeout = timeout
         self.input_words = self.output_words = self.commands = 0
-        if self.control.read(0) != self.ABI:
+        abi=self.control.read(0)
+        if abi not in (0x52530001,0x52530002,0x52530003):
             raise ValueError('accelerator ABI mismatch; bitstream and driver must match')
+        self.packed=abi>=0x52530002
         caps=self.control.read(0x14)
         self.cols=(caps>>8)&255
-        if caps & 0xffff00ff != 0x02030020 or not 1 <= self.cols <= 32:
+        self.filters=(caps>>24)&255
+        if caps & 0x00ff00ff != 0x00030020 or not 1 <= self.cols <= 32 or not 1 <= self.filters <=16:
             raise ValueError('unsupported accelerator dimensions')
         self.control.write(4, 1)
 
     def __call__(self, packet, output_words):
         from pynq import allocate
         packet = np.asarray(packet, dtype=np.uint32)
-        if not 0 < packet.nbytes < 2**23 or not 0 < output_words*4 < 2**23:
+        semantic_packet=packet
+        physical_outputs=packed_output_words(packet,output_words) if self.packed else output_words
+        if self.packed: packet=pack_packet(packet)
+        if not 0 < packet.nbytes < 2**23 or not 0 < physical_outputs*4 < 2**23:
             raise ValueError('packet exceeds configured DMA length register')
         tx = allocate(shape=(len(packet),), dtype=np.uint32)
-        rx = allocate(shape=(output_words,), dtype=np.int32)
+        rx = allocate(shape=(physical_outputs,), dtype=np.int32)
         failed = True
         try:
             tx[:] = packet
@@ -52,12 +60,13 @@ class Accelerator:
             # received byte counts using its standard DMA completion path.
             self.dma.sendchannel.wait()
             self.dma.recvchannel.wait()
-            if self.dma.recvchannel.transferred != output_words*4:
+            if self.dma.recvchannel.transferred != physical_outputs*4:
                 raise RuntimeError('DMA received a short accelerator packet')
             rx.invalidate()
             result = np.array(rx, dtype=np.int32, copy=True)
+            if self.packed: result=unpack_output(semantic_packet,result,output_words)
             self.input_words += len(packet)
-            self.output_words += output_words
+            self.output_words += physical_outputs
             self.commands += 1
             failed = False
             return result
@@ -72,7 +81,7 @@ class Accelerator:
 
     def infer(self, model, x):
         q, graph = load_model(model)
-        return forward(self, q, graph, x, cols=self.cols)
+        return forward(self, q, graph, x, cols=self.cols,filters=self.filters)
 
 
 def main():
@@ -87,7 +96,7 @@ def main():
     board=Board(args.bitstream)
     accel=Accelerator(board.overlay)
     start=time.monotonic()
-    t=forward(accel,q,graph,expected_tensors['input'],cols=accel.cols)
+    t=forward(accel,q,graph,expected_tensors['input'],cols=accel.cols,filters=accel.filters)
     elapsed=time.monotonic()-start
     for name,value in t.items():
         if not np.array_equal(value,expected_tensors[name]):

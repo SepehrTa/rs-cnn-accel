@@ -1,0 +1,68 @@
+RUN C:\AMDDesignTools\2025.2\Vivado\bin\xvlog.bat --sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_accel_top.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_axis_buffer.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_ddr_monitor.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_packet_codec.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_pe.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_postprocess.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_resident.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\hw\rs_stream_core.sv C:\Users\stabr\Documents\ChatGPT\FPGA\rs-cnn-accel\build\codec-v10\sim\tb_control.sv
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_accel_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_accel_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_axis_buffer.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_axis_buffer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_ddr_monitor.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_ddr_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_packet_codec.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_packet_codec
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_pe.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_postprocess.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_postprocess
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_resident.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_resident
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_stream_core.sv" into library work
+INFO: [VRFC 10-311] analyzing module rs_stream_core
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/sim/tb_control.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_control
+
+xvlog: 0.60s
+RUN C:\AMDDesignTools\2025.2\Vivado\bin\xelab.bat tb_control --timescale 1ns/1ps -s tb_control_snapshot
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe tb_control --timescale 1ns/1ps -s tb_control_snapshot 
+Multi-threading is on. Using 30 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'load_p' [C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_stream_core.sv:135]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'compute_p' [C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/hw/rs_stream_core.sv:136]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.rs_axis_buffer_default
+Compiling module work.rs_resident_default
+Compiling module work.rs_packet_codec
+Compiling module work.rs_axis_buffer(BANK_ADDR_BITS=2)
+Compiling module work.rs_pe(DOUBLE_BUFFER=1,PIPELINE=2...
+Compiling module work.rs_pe(DOUBLE_BUFFER=1,PIPELINE=2...
+Compiling module work.rs_postprocess
+Compiling module work.rs_stream_core_default
+Compiling module work.rs_accel_top
+Compiling module work.tb_control
+Built simulation snapshot tb_control_snapshot
+
+xelab: 2.91s
+RUN C:\AMDDesignTools\2025.2\Vivado\bin\xsim.bat tb_control_snapshot -runall
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Thu Nov 12 19:04:02 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_control_snapshot/xsim_script.tcl
+# xsim {tb_control_snapshot} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS CONTROL independent AW/W, stalls, decode, fault, pooling/MAC abort and reset recovery
+$finish called at time : 4390 ns : File "C:/Users/stabr/Documents/ChatGPT/FPGA/rs-cnn-accel/build/codec-v10/sim/tb_control.sv" Line 121
+exit
+INFO: [Common 17-206] Exiting xsim at Thu Nov 12 19:04:04 2026...
+
+xsim: 2.38s

@@ -62,7 +62,7 @@ def main():
                     transport_seconds += time.monotonic()-start
                     return result
                 start = time.monotonic()
-                actual = forward(transport,q,graph,expected['input'],cols=accel.cols)
+                actual = forward(transport,q,graph,expected['input'],cols=accel.cols,filters=accel.filters)
                 elapsed = time.monotonic()-start
                 for name,value in expected.items():
                     np.testing.assert_array_equal(actual[name],value,err_msg=f'image {image} tensor {name}')

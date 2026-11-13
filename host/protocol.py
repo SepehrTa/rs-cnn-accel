@@ -48,7 +48,7 @@ def conv_packets(x, p, layer, cols=8, filters=2, max_out=32):
     k, stride, pad = layer['k'], layer['stride'], layer['pad']
     if k not in (1, 3) or stride not in (1, 2) or w.shape[2:] != (k, k):
         raise ValueError("unsupported kernel/stride")
-    if not 1 <= cols <= 32 or not 1 <= filters <= 2 or not 1 <= max_out <= 32:
+    if not 1 <= cols <= 32 or not 1 <= filters <= 16 or not 1 <= max_out <= 32:
         raise ValueError("tile configuration exceeds default RTL capacities")
     int32_bound(x, w, p['b'])
     shifts = 31 + np.asarray(p['S'], dtype=np.int64)
@@ -71,9 +71,11 @@ def conv_packets(x, p, layer, cols=8, filters=2, max_out=32):
                 pw = (nw-1)*stride+k
                 h = np.zeros(16, dtype=np.int64)
                 h[:9] = [0, k, stride, pw, nw, nr, nf, x.shape[0], int(layer['relu'])]
-                for g in range(nf):
+                for g in range(min(nf,2)):
                     h[9+3*g:12+3*g] = [p['b'][f+g], p['M'][f+g], shifts[f+g]]
                 payload = [h]
+                if nf>2:
+                    payload.append(np.column_stack((p['b'][f+2:f+nf],p['M'][f+2:f+nf],shifts[f+2:f+nf])).ravel())
                 for c in range(x.shape[0]):
                     payload.append(xp[c, y*stride:y*stride+ph, ox*stride:ox*stride+pw].ravel())
                     payload.append(w[f:f+nf, c].ravel())
@@ -169,7 +171,7 @@ def load_vector(path, image=0):
     return q, graph, tensors
 
 
-def forward(transport, q, graph, x, cols=8):
+def forward(transport, q, graph, x, cols=8, filters=2):
     """Execute one N=1 image. transport(packet, output_words) -> signed INT32."""
     x = np.asarray(x)
     if x.ndim != 4 or x.shape[0] != 1:
@@ -180,7 +182,7 @@ def forward(transport, q, graph, x, cols=8):
         p = q.get(layer['name'])
         if op == 'conv':
             out = None
-            for packet, region, shape in conv_packets(t[layer['src']][0], p, layer, cols=cols):
+            for packet, region, shape in conv_packets(t[layer['src']][0], p, layer, cols=cols,filters=filters):
                 if out is None:
                     out = np.empty(shape, np.int64)
                 tile_shape = tuple(s.stop-s.start for s in region)

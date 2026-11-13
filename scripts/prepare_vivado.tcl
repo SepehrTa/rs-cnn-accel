@@ -10,7 +10,7 @@ if {[current_project -quiet] eq ""} {
 }
 
 # Module-reference tops require Verilog in 2025.2; children remain SV.
-set_property FILE_TYPE Verilog [get_files rs_accel_top.sv]
+set_property FILE_TYPE Verilog [get_files {rs_accel_top.sv rs_ddr_monitor.sv}]
 set_property TOP system_wrapper [get_filesets sources_1]
 set_property TOP_AUTO_SET 0 [get_filesets sources_1]
 # A source clone has no incremental synthesis checkpoint to reuse.
@@ -26,7 +26,9 @@ foreach project_input [get_files -norecurse] {
 set bd_file [get_files system.bd]
 if {[llength $bd_file] != 1} {error "Expected one system.bd block design"}
 open_bd_design $bd_file
-update_module_reference [get_ips system_rs_accel_0_0]
+foreach module_ip {system_rs_accel_0_0 system_rs_ddr_monitor_0_0} {
+    update_module_reference [get_ips $module_ip]
+}
 validate_bd_design
 save_bd_design
 generate_target all $bd_file
